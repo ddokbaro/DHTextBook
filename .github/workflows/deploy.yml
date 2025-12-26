@@ -24,36 +24,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 1. 파이썬 설치 (Jupyter Book 설치용)
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # [핵심 추가] 2. Node.js 설치 (최신 버전이 HTML을 그릴 때 필수입니다!)
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. 도구 설치
       - name: Install dependencies
         run: |
           pip install jupyter-book
-          # npm 패키지도 확실하게 설치
-          npm install -g myst-cli
+          # [변경] 전역(-g) 설치 대신 현재 폴더에 설치합니다 (오류 방지)
+          npm install myst-cli
 
-      # 4. 빌드 (HTML 옵션 명시)
       - name: Build the book
         run: |
-          # jupyter-book v2의 본체인 myst 명령어를 직접 써서 html을 강제로 뽑습니다.
-          myst build --html
+          # [핵심] npx를 붙이면 설치된 myst를 확실하게 찾아서 실행합니다!
+          npx myst build --html
 
-      # 5. 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # myst build --html의 기본 출력 경로는 _build/html 입니다.
           path: "_build/html"
 
       - name: Deploy to GitHub Pages
