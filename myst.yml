@@ -1,15 +1,97 @@
 version: 1
 project:
   id: dh-textbook
-  title: "나의 디지털 인문학 교과서"
+  title: "디지털 인문학 교과서"
+  description: 이론에서 구현까지, 인문학도를 위한 통합 가이드
   authors:
     - name:
         given: "바로"
         family: "김"
-  # 목차 설정
+      affiliations:
+        - "한국학중앙연구원"
+  
+  # GitHub 배포 설정 (필수)
+  github:
+    user: ddokbaro
+    repo: DHTextBook
+  
+  # ---------------------------------------------------------
+  # [목차 구조] MyST v2 표준: project.toc 내부에 계층 구조 정의
+  # ---------------------------------------------------------
   toc:
+    # 1. 랜딩 페이지 (서문)
     - file: intro.md
-    - file: JupyterBook.md
-    - file: MySTMarkdown.md
+
+    # 2. [Part 1] 이론과 배경
+    - title: Part 1. 디지털 인문학의 지평
+      children:
+        - file: content/part1_theory/01_dh_history.md
+        - file: content/part1_theory/02_methodology_shift.md
+        - file: content/part1_theory/03_critical_dh.md
+
+    # 3. [Part 2] 컴퓨팅 원리
+    - title: Part 2. 컴퓨팅의 원형과 역사
+      children:
+        - file: content/part2_computing/01_turing_von_neumann.md
+        - file: content/part2_computing/02_bit_and_memory.md
+        - file: content/part2_computing/03_network_web_history.md
+
+    # 4. [Part 3] 문자 인코딩
+    - title: Part 3. 문자의 디지털 재현
+      children:
+        - file: content/part3_encoding/01_ascii_history.md
+        - file: content/part3_encoding/02_korean_encoding.md
+        - file: content/part3_encoding/03_unicode_utf8.md
+
+    # 5. [Part 4] 비정형 텍스트
+    - title: Part 4. 비정형 텍스트 다루기
+      children:
+        - file: content/part4_regex/01_plain_text.md
+        - file: content/part4_regex/02_regex_basic.md
+        - file: content/part4_regex/03_regex_advanced.md
+
+    # 6. [Part 5] 구조적 데이터
+    - title: Part 5. 구조적 데이터와 데이터베이스
+      children:
+        - file: content/part5_data/01_tabular_data.md
+        - file: content/part5_data/02_rdb_concept.md
+        - file: content/part5_data/03_sql_basic.md
+        - file: content/part5_data/04_xml_tei.md
+
+    # 7. [Part 6] 의미망
+    - title: Part 6. 의미와 연결
+      children:
+        - file: content/part6_rdf/01_semantic_web.md
+        - file: content/part6_rdf/02_ontology_design.md
+
+    # 8. [Part 7] 분석 방법론
+    - title: Part 7. 데이터 분석 방법론
+      children:
+        - file: content/part7_analysis/01_text_mining_flow.md
+        - file: content/part7_analysis/02_topic_modeling.md
+        - file: content/part7_analysis/03_sna_theory.md
+        - file: content/part7_analysis/04_gis_spatial.md
+
+    # 9. [Part 8] AI
+    - title: Part 8. 인공지능과 인문학
+      children:
+        - file: content/part8_ai/01_ai_paradigm.md
+        - file: content/part8_ai/02_deep_learning_basics.md
+        - file: content/part8_ai/03_gen_ai_llm.md
+
+    # 10. [Part 9] 인프라 및 출판 (기존 파일 통합 위치)
+    - title: Part 9. 연구 인프라와 출판
+      children:
+        - file: content/part9_infra/01_cli_linux.md
+        - file: content/part9_infra/02_web_server_flask.md
+        - file: content/part9_infra/03_git_github.md
+        - file: content/part9_infra/04_publish_environment.md # (구 JupyterBook.md 업그레이드)
+        - file: content/part9_infra/05_myst_syntax_guide.md   # (구 MySTMarkdown.md 업그레이드)
+
 site:
   template: book-theme
+  # GitHub Pages 배포 경로 설정 (필수 확인)
+  base_url: /DHTextBook/ 
+  options:
+    # 챕터 번호 자동 부여 (1.1, 1.2 등)
+    numbered_chapters: true
