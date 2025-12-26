@@ -1,12 +1,10 @@
 name: deploy-book
 
-# main 브랜치에 push될 때 실행
 on:
   push:
     branches:
       - main
 
-# GitHub Actions 배포를 위한 권한 설정 (이게 없으면 오류가 날 수 있습니다)
 permissions:
   contents: read
   pages: write
@@ -31,23 +29,20 @@ jobs:
         with:
           python-version: '3.11'
 
+      # [수정됨] 파일을 찾지 않고 직접 jupyter-book을 설치합니다
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install jupyter-book
 
       - name: Build the book
         run: |
-          # 책이 있는 폴더 경로가 루트(.)가 아니라면 아래 . 을 해당 폴더명으로 바꿔주세요
           jupyter-book build .
 
-      # 빌드된 결과물을 GitHub Pages용 아티팩트로 업로드 (필수)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Jupyter Book의 기본 빌드 경로입니다.
           path: "_build/html"
 
-      # 실제 배포 수행
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
