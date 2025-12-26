@@ -24,30 +24,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
+      # 1. Node.js 설치 (필수)
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
+      # 2. 도구 설치 (전역 설치 -g 옵션 사용)
       - name: Install dependencies
         run: |
-          pip install jupyter-book
-          # [변경] 전역(-g) 설치 대신 현재 폴더에 설치합니다 (오류 방지)
-          npm install myst-cli
+          # -g 옵션을 붙여서 컴퓨터 전체에 설치합니다 (경로 문제 해결)
+          npm install -g myst-cli
 
+      # 3. 빌드 (이제 npx 없이도 myst 명령어가 잘 먹힙니다)
       - name: Build the book
         run: |
-          # [핵심] npx를 붙이면 설치된 myst를 확실하게 찾아서 실행합니다!
-          npx myst build --html
+          myst build --html
 
+      # 4. 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # myst build --html의 결과물은 이 경로에 생깁니다
           path: "_build/html"
 
       - name: Deploy to GitHub Pages
