@@ -3,12 +3,12 @@ project:
   id: dhtextbook-guide
   title: 디지털 인문학 교과서
   author: 김바로
-  # 여기에 라이선스를 명시합니다
   license: CC-BY-NC-4.0
+  # 핵심: intro.md 파일을 홈페이지(index.html)로 만들라는 설정
+  index: intro.md
 
 site:
   template: book-theme
-  # 하단에 라이선스 배지 추가
   actions:
     - title: License
       url: http://creativecommons.org/licenses/by-nc/4.0/
