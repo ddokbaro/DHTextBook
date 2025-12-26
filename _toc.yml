@@ -1,0 +1,5 @@
+format: jb-book
+root: intro
+# 챕터가 더 있다면 아래처럼 추가하면 됩니다
+# chapters:
+#   - file: 챕터1파일명
