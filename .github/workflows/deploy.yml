@@ -35,15 +35,17 @@ jobs:
         with:
           node-version: '20'
 
-      # 2. 도구 설치 (범인 검거: myst-cli -> mystmd 변경!)
+      # 2. 도구 설치 (mystmd 사용)
       - name: Install dependencies
         run: |
           pip install jupyter-book
-          # [핵심 수정] 패키지 이름을 mystmd로 바꿔야 myst 명령어가 생깁니다.
           npm install -g mystmd
 
-      # 3. 빌드 (이제 myst 명령어가 정상적으로 동작합니다)
+      # 3. 빌드 (BASE_URL 설정 추가)
       - name: Build the book
+        env:
+          # 사이트가 호스팅되는 하위 경로(/DHTextBook)를 명시해야 합니다
+          BASE_URL: /DHTextBook
         run: |
           myst build --html
 
@@ -51,7 +53,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # myst build --html의 결과물은 _build/html에 생성됩니다
           path: "_build/html"
 
       - name: Deploy to GitHub Pages
