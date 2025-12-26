@@ -5,31 +5,45 @@ on:
     branches:
       - main
 
+# 권한 설정 (이 부분이 있어야 로봇이 직접 배포 가능)
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy-book:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
 
-    - name: Install dependencies
-      run: |
-        pip install jupyter-book
+      - name: Install dependencies
+        run: |
+          pip install jupyter-book
 
-    - name: Build the book
-      run: |
-        jupyter-book build
+      - name: Build the book
+        run: |
+          jupyter-book build .
 
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # 최신 버전은 _build/html 폴더에 결과물이 생깁니다
-        publish_dir: ./_build/html
+      # 만들어진 HTML을 GitHub Pages 아티팩트로 업로드
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./_build/html"
+
+      # 업로드된 파일을 웹사이트로 배포
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
