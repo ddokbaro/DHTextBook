@@ -24,27 +24,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       # 1. Node.js 설치
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 2. 설치 및 빌드 (절대 실패하지 않는 방식)
-      - name: Install and Build
+      # 2. 도구 설치 (범인 검거: myst-cli -> mystmd 변경!)
+      - name: Install dependencies
         run: |
-          # 현재 폴더에 설치
-          npm install myst-cli
-          
-          # [핵심] 설치된 실행 파일을 "직접 경로"로 지정해서 실행합니다.
-          # 이렇게 하면 PATH 설정이 꼬여도 무조건 실행됩니다.
-          ./node_modules/.bin/myst build --html
+          pip install jupyter-book
+          # [핵심 수정] 패키지 이름을 mystmd로 바꿔야 myst 명령어가 생깁니다.
+          npm install -g mystmd
 
-      # 3. 결과물 업로드
+      # 3. 빌드 (이제 myst 명령어가 정상적으로 동작합니다)
+      - name: Build the book
+        run: |
+          myst build --html
+
+      # 4. 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # myst build --html 명령은 _build/html 폴더를 만듭니다.
+          # myst build --html의 결과물은 _build/html에 생성됩니다
           path: "_build/html"
 
       - name: Deploy to GitHub Pages
