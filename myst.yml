@@ -9,6 +9,7 @@ project:
   # 목차 설정
   toc:
     - file: intro.md
-
+    - file: deployment.md
+    
 site:
   template: book-theme
