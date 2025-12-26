@@ -1,4 +1,8 @@
-﻿# MyST Markdown 표준 문법 가이드
+﻿---
+title: MyST Markdown 표준 문법 가이드
+---
+
+# MyST Markdown 표준 문법 가이드
 
 이 문서는 Jupyter Book의 표준 문법인 **MyST(Markedly Structured Text)**의 핵심 사용법을 정리한 교육용 문서입니다. 일반적인 마크다운 문법에 학술적인 글쓰기를 위한 기능(각주, 인용, 수식, 상호 참조 등)이 추가된 형태입니다.
 
