@@ -24,28 +24,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 1. Node.js 설치 (필수)
+      # 1. Node.js 설치
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 2. 도구 설치 (전역 설치 -g 옵션 사용)
-      - name: Install dependencies
+      # 2. 설치 및 빌드 (절대 실패하지 않는 방식)
+      - name: Install and Build
         run: |
-          # -g 옵션을 붙여서 컴퓨터 전체에 설치합니다 (경로 문제 해결)
-          npm install -g myst-cli
+          # 현재 폴더에 설치
+          npm install myst-cli
+          
+          # [핵심] 설치된 실행 파일을 "직접 경로"로 지정해서 실행합니다.
+          # 이렇게 하면 PATH 설정이 꼬여도 무조건 실행됩니다.
+          ./node_modules/.bin/myst build --html
 
-      # 3. 빌드 (이제 npx 없이도 myst 명령어가 잘 먹힙니다)
-      - name: Build the book
-        run: |
-          myst build --html
-
-      # 4. 결과물 업로드
+      # 3. 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # myst build --html의 결과물은 이 경로에 생깁니다
+          # myst build --html 명령은 _build/html 폴더를 만듭니다.
           path: "_build/html"
 
       - name: Deploy to GitHub Pages
