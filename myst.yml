@@ -3,12 +3,12 @@ project:
   id: dh-textbook
   title: "나의 디지털 인문학 교과서"
   authors:
-    - name: "김바로"
-  # 목차 설정 (intro.md가 메인 페이지)
+    - name:
+        given: "바로"
+        family: "김"
+  # 목차 설정
   toc:
     - file: intro.md
-      # 챕터가 더 있다면 아래처럼 추가
-      # - file: chapter1.md
 
 site:
   template: book-theme

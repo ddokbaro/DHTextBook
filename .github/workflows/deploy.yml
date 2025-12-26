@@ -29,18 +29,15 @@ jobs:
         with:
           python-version: '3.11'
 
+      # 최신 버전 설치 (교수님 의도대로!)
       - name: Install dependencies
         run: |
           pip install jupyter-book
 
-      # [중요] 파일들이 어디 숨어있는지 확인하는 단계입니다
-      - name: Check file structure
-        run: ls -R
-
-      # 일단 루트에서 빌드 시도 (이건 실패할 수도 있습니다)
       - name: Build the book
         run: |
-          jupyter-book build .
+          # [핵심 수정] 뒤에 있던 점(.)을 제거했습니다.
+          jupyter-book build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
