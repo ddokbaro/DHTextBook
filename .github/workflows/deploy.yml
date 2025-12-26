@@ -29,11 +29,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      # [수정됨] 파일을 찾지 않고 직접 jupyter-book을 설치합니다
       - name: Install dependencies
         run: |
           pip install jupyter-book
 
+      # [중요] 파일들이 어디 숨어있는지 확인하는 단계입니다
+      - name: Check file structure
+        run: ls -R
+
+      # 일단 루트에서 빌드 시도 (이건 실패할 수도 있습니다)
       - name: Build the book
         run: |
           jupyter-book build .
