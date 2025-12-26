@@ -1,4 +1,4 @@
-# GitHub Actions를 활용한 Jupyter Book 자동 배포
+# Jupyter Book(GitHub Actions)
 
 이 챕터에서는 로컬 컴퓨터에서 매번 빌드할 필요 없이, GitHub에 소스를 올리기만 하면 자동으로 웹사이트를 만들어 배포해주는 **GitHub Actions** 설정 방법을 다룹니다.
 
@@ -6,7 +6,7 @@
 
 ## 1. 프로젝트 설정 파일 준비 (`myst.yml`)
 
-최신 Jupyter Book은 `_config.yml` 대신 `myst.yml`을 사용하여 프로젝트를 설정합니다. 배포 시 오류를 막기 위해 **저자 정보**를 상세히 기록해야 합니다.
+최신 Jupyter Book은 `_config.yml` 대신 **`myst.yml`**을 사용하여 프로젝트를 설정합니다. 배포 시 오류를 막기 위해 **저자 정보**를 상세히 기록해야 합니다.
 
 ```yaml
 version: 1
@@ -27,15 +27,18 @@ site:
   template: book-theme
 ```
 
-
 ## 2. GitHub 저장소 권한 설정
 
 GitHub Actions가 배포를 수행할 수 있도록 권한을 열어주어야 합니다.
 
 1. 저장소 상단의 **Settings** 탭을 클릭합니다.
 2. 왼쪽 사이드바에서 **Pages** 메뉴를 선택합니다.
-3. **Build and deployment** 섹션의 **Source** 항목을 `Deploy from a branch`에서 `GitHub Actions`로 변경합니다.
+3. **Build and deployment** 섹션의 **Source** 항목을 `Deploy from a branch`에서 **`GitHub Actions`**로 변경합니다.
 
+:::{figure} https://docs.github.com/assets/cb-33924/images/help/pages/pages-source-setting-actions.png
+:align: center
+:width: 80%
+:alt: GitHub Pages Source 설정 화면
 
 Source를 반드시 **GitHub Actions**로 변경해야 합니다.
 :::
@@ -126,11 +129,20 @@ jobs:
 
 배포 과정에서 오류가 발생할 경우 다음 사항을 확인하세요.
 
-### Q1. `command not found: myst` 오류가 발생합니다.
+:::{admonition} Q1. command not found: myst 오류가 발생합니다.
+:class: tip
+
 설치된 패키지 이름을 확인하세요. `npm install myst-cli`로 설치하면 실행 파일이 없을 수 있습니다. 반드시 **`npm install -g mystmd`**를 사용해야 합니다.
+:::
 
-### Q2. 배포는 성공했는데 화면 디자인이 깨져서 보입니다.
+:::{admonition} Q2. 배포는 성공했는데 화면 디자인이 깨져서 보입니다.
+:class: tip
+
 CSS 파일을 찾지 못하는 문제입니다. `deploy.yml` 파일에서 `export BASE_URL="/저장소이름"` 부분이 정확한지 확인하세요.
+:::
 
-### Q3. 사이트에 접속하니 404 오류가 뜹니다.
+:::{admonition} Q3. 사이트에 접속하니 404 오류가 뜹니다.
+:class: tip
+
 `_static` 폴더가 GitHub에 의해 숨겨졌을 가능성이 큽니다. 빌드 단계 직후에 `touch .nojekyll` 명령어가 포함되어 있는지 확인하세요.
+:::
