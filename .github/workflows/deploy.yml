@@ -15,10 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  debug-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,21 +26,18 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 최신 버전 설치 (교수님 의도대로!)
       - name: Install dependencies
         run: |
           pip install jupyter-book
 
       - name: Build the book
         run: |
-          # [핵심 수정] 뒤에 있던 점(.)을 제거했습니다.
           jupyter-book build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_build/site"
+      # [중요] 빌드 직후 폴더 구조를 샅샅이 뒤져서 보여줍니다
+      - name: Find output directory
+        run: |
+          echo "=== 현재 폴더 구조 ==="
+          ls -R
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # 일부러 배포 단계는 뺐습니다 (위 로그를 확인하는 게 목적이라서요)
