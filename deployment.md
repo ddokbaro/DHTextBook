@@ -6,7 +6,7 @@
 
 ## 1. 프로젝트 설정 파일 준비 (`myst.yml`)
 
-최신 Jupyter Book은 `_config.yml` 대신 **`myst.yml`**을 사용하여 프로젝트를 설정합니다. 배포 시 오류를 막기 위해 **저자 정보**를 상세히 기록해야 합니다.
+최신 Jupyter Book은 `_config.yml` 대신 `myst.yml`을 사용하여 프로젝트를 설정합니다. 배포 시 오류를 막기 위해 **저자 정보**를 상세히 기록해야 합니다.
 
 ```yaml
 version: 1
@@ -27,10 +27,6 @@ site:
   template: book-theme
 ```
 
-:::{admonition} 주의: 구 버전 파일 삭제
-:class: warning
-`myst.yml`을 사용할 때 기존의 `_config.yml`이나 `_toc.yml` 파일이 남아있으면 설정 충돌이 발생할 수 있습니다. 반드시 삭제해 주세요.
-:::
 
 ## 2. GitHub 저장소 권한 설정
 
@@ -38,12 +34,8 @@ GitHub Actions가 배포를 수행할 수 있도록 권한을 열어주어야 �
 
 1. 저장소 상단의 **Settings** 탭을 클릭합니다.
 2. 왼쪽 사이드바에서 **Pages** 메뉴를 선택합니다.
-3. **Build and deployment** 섹션의 **Source** 항목을 `Deploy from a branch`에서 **`GitHub Actions`**로 변경합니다.
+3. **Build and deployment** 섹션의 **Source** 항목을 `Deploy from a branch`에서 `GitHub Actions`로 변경합니다.
 
-:::{figure} https://docs.github.com/assets/cb-33924/images/help/pages/pages-source-setting-actions.png
-:align: center
-:width: 80%
-:alt: GitHub Pages Source 설정 화면
 
 Source를 반드시 **GitHub Actions**로 변경해야 합니다.
 :::
