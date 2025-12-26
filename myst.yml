@@ -3,13 +3,13 @@ project:
   id: dh-textbook
   title: "디지털 인문학 교과서"
   description: 이론에서 구현까지, 인문학도를 위한 통합 가이드
-  authors:
-    - name:
-        given: "바로"
-        family: "김"
-      affiliations:
-        - "한국학중앙연구원"
-  
+# authors:               <-- 여기부터 주석 처리 (#)
+  #   - name:
+  #       given: "바로"
+  #       family: "김"
+  #     affiliations:
+  #       - "한국학중앙연구원"
+
   # GitHub 배포 설정 (필수)
   github:
     user: ddokbaro
@@ -91,6 +91,7 @@ project:
 site:
   template: book-theme
   # GitHub Pages 배포 경로 설정 (필수 확인)
+  logo: logo.png
   base_url: /DHTextBook/ 
   options:
     # 챕터 번호 자동 부여 (1.1, 1.2 등)
