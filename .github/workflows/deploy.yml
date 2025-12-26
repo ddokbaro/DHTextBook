@@ -15,29 +15,47 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  debug-build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 1. 파이썬 설치 (Jupyter Book 설치용)
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
+      # [핵심 추가] 2. Node.js 설치 (최신 버전이 HTML을 그릴 때 필수입니다!)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. 도구 설치
       - name: Install dependencies
         run: |
           pip install jupyter-book
+          # npm 패키지도 확실하게 설치
+          npm install -g myst-cli
 
+      # 4. 빌드 (HTML 옵션 명시)
       - name: Build the book
         run: |
-          jupyter-book build
+          # jupyter-book v2의 본체인 myst 명령어를 직접 써서 html을 강제로 뽑습니다.
+          myst build --html
 
-      # [중요] 빌드 직후 폴더 구조를 샅샅이 뒤져서 보여줍니다
-      - name: Find output directory
-        run: |
-          echo "=== 현재 폴더 구조 ==="
-          ls -R
+      # 5. 결과물 업로드
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # myst build --html의 기본 출력 경로는 _build/html 입니다.
+          path: "_build/html"
 
-      # 일부러 배포 단계는 뺐습니다 (위 로그를 확인하는 게 목적이라서요)
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
