@@ -37,13 +37,19 @@ jobs:
       - name: Install dependencies
         run: |
           pip install jupyter-book
+          # [정답] mystmd 패키지 설치
           npm install -g mystmd
 
-      # [핵심 수정] 환경변수 대신 명령어 옵션(--base-url)을 직접 사용합니다.
-      # 이렇게 하면 무조건 링크가 /DHTextBook/... 으로 생성됩니다.
       - name: Build the book
+        # [정답] 명령어 옵션이 아니라, 환경변수로 주소를 알려줍니다.
         run: |
-          myst build --html --base-url /DHTextBook
+          export BASE_URL="/DHTextBook"
+          myst build --html
+
+      # [핵심 해결책] Jekyll이 파일들을 무시하지 못하게 '방패(.nojekyll)'를 만듭니다!
+      - name: Disable Jekyll
+        run: |
+          touch _build/html/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
