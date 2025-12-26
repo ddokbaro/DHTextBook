@@ -29,27 +29,22 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 1. Node.js 설치
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 2. 도구 설치 (mystmd 사용)
       - name: Install dependencies
         run: |
           pip install jupyter-book
           npm install -g mystmd
 
-      # 3. 빌드 (BASE_URL 설정 추가)
+      # [핵심 수정] 환경변수 대신 명령어 옵션(--base-url)을 직접 사용합니다.
+      # 이렇게 하면 무조건 링크가 /DHTextBook/... 으로 생성됩니다.
       - name: Build the book
-        env:
-          # 사이트가 호스팅되는 하위 경로(/DHTextBook)를 명시해야 합니다
-          BASE_URL: /DHTextBook
         run: |
-          myst build --html
+          myst build --html --base-url /DHTextBook
 
-      # 4. 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
