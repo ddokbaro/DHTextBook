@@ -10,6 +10,6 @@ project:
   toc:
     - file: intro.md
     - file: JupyterBook.md
-
+    - file: MySTMarkdown.md
 site:
   template: book-theme
