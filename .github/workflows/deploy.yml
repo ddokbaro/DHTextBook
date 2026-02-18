@@ -1,71 +1,90 @@
-name: deploy-book
+version: 1
+project:
+  id: dh-textbook
+  title: "디지털 인문학 교과서"
+  description: 이론에서 구현까지, 인문학도를 위한 통합 가이드
+  # authors:
+  #   - name:
+  #       given: "바로"
+  #       family: "김"
+  #     affiliations:
+  #       - "한국학중앙연구원"
 
-on:
-  push:
-    branches:
-      - main
+  # 1. GitHub 저장소 링크 (형식 수정: 안정적인 문자열 방식 권장)
+  github: https://github.com/ddokbaro/DHTextBook
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  # 2. [추가] PDF 내보내기 설정
+  exports:
+    - format: pdf
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  # ---------------------------------------------------------
+  # [목차 구조] (기존과 동일하게 유지)
+  # ---------------------------------------------------------
+  toc:
+    - file: intro.md
+    - title: Part 1. 디지털 인문학의 지평
+      children:
+        - file: content/part1_theory/01_dh_history.md
+        - file: content/part1_theory/02_methodology_shift.md
+        - file: content/part1_theory/03_critical_dh.md
+    - title: Part 2. 컴퓨팅의 원형과 역사
+      children:
+        - file: content/part2_computing/01_turing_von_neumann.md
+        - file: content/part2_computing/02_bit_and_memory.md
+        - file: content/part2_computing/03_network_web_history.md
+    - title: Part 3. 문자의 디지털 재현
+      children:
+        - file: content/part3_encoding/01_ascii_history.md
+        - file: content/part3_encoding/02_korean_encoding.md
+        - file: content/part3_encoding/03_unicode_utf8.md
+    - title: Part 4. 비정형 텍스트 다루기
+      children:
+        - file: content/part4_regex/01_plain_text.md
+        - file: content/part4_regex/02_regex_basic.md
+        - file: content/part4_regex/03_regex_advanced.md
+    - title: Part 5. 구조적 데이터와 데이터베이스
+      children:
+        - file: content/part5_data/01_tabular_data.md
+        - file: content/part5_data/02_rdb_concept.md
+        - file: content/part5_data/03_sql_basic.md
+        - file: content/part5_data/04_xml_tei.md
+    - title: Part 6. 의미와 연결
+      children:
+        - file: content/part6_rdf/01_semantic_web.md
+        - file: content/part6_rdf/02_ontology_design.md
+    - title: Part 7. 데이터 분석 방법론
+      children:
+        - file: content/part7_analysis/01_text_mining_flow.md
+        - file: content/part7_analysis/02_topic_modeling.md
+        - file: content/part7_analysis/03_sna_theory.md
+        - file: content/part7_analysis/04_gis_spatial.md
+    - title: Part 8. 인공지능과 인문학
+      children:
+        - file: content/part8_ai/01_ai_paradigm.md
+        - file: content/part8_ai/02_deep_learning_basics.md
+        - file: content/part8_ai/03_gen_ai_llm.md
+    - title: Part 9. 연구 인프라와 출판
+      children:
+        - file: content/part9_infra/01_cli_linux.md
+        - file: content/part9_infra/02_web_server_flask.md
+        - file: content/part9_infra/03_git_github.md
+        - file: content/part9_infra/04_publish_environment.md
+        - file: content/part9_infra/05_myst_syntax_guide.md
 
-jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: |
-          pip install jupyter-book
-          # [정답] mystmd 패키지 설치
-          npm install -g mystmd
-
-      # --- 👇 [추가] PDF 한글 깨짐 방지를 위한 폰트 설치 ---
-      - name: Install Korean Fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk
-          fc-cache -fv
-      # --------------------------------------------------------
-
-      - name: Build the book
-        run: |
-          export BASE_URL="/DHTextBook"
-          # 👇 [수정] HTML과 PDF를 동시에 생성하도록 명령어를 통합합니다.
-          myst build --html --pdf
-      # --------------------------------------------------------
-
-# [원상 복구] 다시 html 폴더에 방패를 만듭니다!
-      - name: Disable Jekyll
-        run: |
-          touch _build/html/.nojekyll
-
-      # [원상 복구] 업로드 경로도 html로 되돌립니다!
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_build/html"
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+site:
+  template: book-theme
+  logo: logo.png
+  
+  # 3. [추가] 전체 URL (GitHub Pages 배포 시 깨짐 방지용 필수 설정)
+  url: https://ddokbaro.github.io/DHTextBook
+  base_url: /DHTextBook/ 
+  
+  # 4. [추가] 우측 상단 Colab 및 다운로드 버튼 등 액션 설정
+  actions:
+    - title: Open in Colab
+      icon: rocket
+      url: https://colab.research.google.com/github/ddokbaro/DHTextBook/blob/main/
+      static: true
+      
+  options:
+    numbered_chapters: true

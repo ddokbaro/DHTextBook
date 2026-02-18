@@ -5,7 +5,7 @@ project:
   description: 이론에서 구현까지, 인문학도를 위한 통합 가이드
   github: https://github.com/ddokbaro/DHTextBook
 
-  # [기존] PDF export (Typst 엔진) 코드 
+# PDF export 설정
   exports:
     - id: dh-textbook-pdf
       format: typst
@@ -14,13 +14,14 @@ project:
       fontsize: 10
       linespacing: 1.25
       show_ToC: true
+      # ⚠️ 주의: 정상 작동 파일에 있던 template: templates/plain_typst_book 은 
+      # 현재 프로젝트 폴더에 templates 폴더가 없다면 에러가 나므로 꼭 빼거나 주석 처리하세요!
 
-  # --- 👇 [핵심 해결책] 다운로드 설정을 site에서 project로 옮겨옵니다! ---
-# --- 👇 [수정] mystmd v2 문법에 맞게 file 경로 지정 ---
+  # 👇 PDF 다운로드 항목으로 노출 (정상 파일과 동일하게 롤백)
   downloads:
-    - title: "PDF 다운로드"
-      file: exports/dh-textbook.pdf
-  # -------------------------------------------------------------------------
+    - id: dh-textbook-pdf
+      title: "PDF 다운로드"
+      filename: "dh-textbook.pdf"
   # ---------------------------------------------------------
   # [목차 구조] (기존과 동일하게 유지)
   # ---------------------------------------------------------
