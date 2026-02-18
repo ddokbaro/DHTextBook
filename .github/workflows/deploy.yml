@@ -40,11 +40,20 @@ jobs:
           # [정답] mystmd 패키지 설치
           npm install -g mystmd
 
+      # --- 👇 [추가] PDF 한글 깨짐 방지를 위한 폰트 설치 ---
+      - name: Install Korean Fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+          fc-cache -fv
+      # --------------------------------------------------------
+
       - name: Build the book
-        # [정답] 명령어 옵션이 아니라, 환경변수로 주소를 알려줍니다.
+        # --- 👇 [수정] --html 대신 --all을 사용하여 HTML과 PDF를 모두 생성합니다 ---
         run: |
           export BASE_URL="/DHTextBook"
-          myst build --html
+          myst build --all
+      # --------------------------------------------------------
 
       # [핵심 해결책] Jekyll이 파일들을 무시하지 못하게 '방패(.nojekyll)'를 만듭니다!
       - name: Disable Jekyll
