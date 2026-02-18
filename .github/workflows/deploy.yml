@@ -60,19 +60,18 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g mystmd
-          echo "$(npm bin -g)" >> $GITHUB_PATH
           pip install jupyter-book jupytext
 
       # 1. PDF만 먼저 굽기
       - name: Build PDF exports
         run: |
-          mystmd build --pdf
+          npx mystmd build --pdf
 
       # 2. HTML(웹사이트) 굽기
       - name: Build the book
         run: |
           export BASE_URL="/DHTextBook"  # ⚠️ 현재 작업 중이신 저장소 이름과 정확히 일치하는지 확인해 주세요.
-          mystmd build --html
+          npx mystmd build --html
 
       # 3. [가장 핵심!!!] 만들어진 PDF를 웹사이트 배포 폴더(_build/html/exports)로 이사시키기
       - name: Check PDF build output
