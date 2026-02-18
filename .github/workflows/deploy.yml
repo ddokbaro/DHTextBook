@@ -74,11 +74,15 @@ jobs:
           myst build --html
 
       # 3. [가장 핵심!!!] 만들어진 PDF를 웹사이트 배포 폴더(_build/html/exports)로 이사시키기
+      - name: Check PDF build output
+        run: |
+          echo "Listing files in exports directory:"
+          ls -R exports
       - name: Copy exports into HTML build
         run: |
           if [ -d exports ]; then
             mkdir -p _build/html/exports
-            cp -v exports/*.pdf _build/html/exports/ || true
+            cp -v exports/*.pdf _build/html/exports/
           fi
 
       # Github Page의 Jekyll(기본 정적 사이트 빌더) 규칙 미사용 처리
