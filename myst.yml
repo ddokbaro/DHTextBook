@@ -35,8 +35,22 @@ project:
 
     - title: "Part 2. 컴퓨팅과 네트워크"
       children:
-        - file: content/computing/turing_to_pc.md
-        - file: content/computing/bit_and_memory.md
+        # [첫 번째 주제: 컴퓨팅의 역사와 철학]
+        - file: content/computing/history_overview.md
+          children:
+            - file: content/computing/turing_machine.md
+            - file: content/computing/von_neumann.md
+            - file: content/computing/moores_law.md
+
+        # [두 번째 주제: 현대 하드웨어의 구조와 진화]
+        - file: content/computing/hardware_overview.md
+          children:
+            - file: content/computing/logic_and_bit.md
+            - file: content/computing/storage.md
+            - file: content/computing/gpu.md
+            - file: content/computing/io_interface.md
+
+        # [세 번째 주제: 연결의 확장]
         - file: content/computing/network_protocols.md
 
     - title: "Part 3. 문자의 디지털 재현"

@@ -1,6 +1,6 @@
 ---
-title: "01 2 Von Neumann"
+title: "Logic And Bit"
 ---
-# 01 2 Von Neumann
+# Logic And Bit
 
 이곳에 내용이 작성됩니다.

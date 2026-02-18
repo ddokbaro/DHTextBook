@@ -1,6 +1,6 @@
 ---
-title: "02 3 Gpu"
+title: "Moores Law"
 ---
-# 02 3 Gpu
+# Moores Law
 
 이곳에 내용이 작성됩니다.

@@ -1,6 +1,6 @@
 ---
-title: "01 3 Moores Law"
+title: "Storage"
 ---
-# 01 3 Moores Law
+# Storage
 
 이곳에 내용이 작성됩니다.

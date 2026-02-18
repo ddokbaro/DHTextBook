@@ -1,6 +1,6 @@
 ---
-title: "02 2 Storage"
+title: "Turing Machine"
 ---
-# 02 2 Storage
+# Turing Machine
 
 이곳에 내용이 작성됩니다.

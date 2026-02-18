@@ -1,6 +1,6 @@
 ---
-title: "01 1 Turing"
+title: "Gpu"
 ---
-# 01 1 Turing
+# Gpu
 
 이곳에 내용이 작성됩니다.
