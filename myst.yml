@@ -13,9 +13,17 @@ project:
   # 1. GitHub 저장소 링크 (형식 수정: 안정적인 문자열 방식 권장)
   github: https://github.com/ddokbaro/DHTextBook
 
-  # 2. [추가] PDF 내보내기 설정
+# --- 👇 찾아주신 PDF export (Typst 엔진) 코드 적용 ---
   exports:
-    - format: pdf
+    - id: dh-textbook-pdf
+      format: typst
+      output: exports/dh-textbook.pdf
+      # template: templates/plain_typst_book  <-- 커스텀 템플릿 폴더가 없다면 에러가 나므로 일단 주석 처리합니다.
+      fontstyle: "Noto Sans CJK KR"
+      fontsize: 10
+      linespacing: 1.25
+      show_ToC: true
+# --------------------------------------------------
 
   # ---------------------------------------------------------
   # [목차 구조] (기존과 동일하게 유지)
@@ -71,15 +79,17 @@ project:
         - file: content/part9_infra/04_publish_environment.md
         - file: content/part9_infra/05_myst_syntax_guide.md
 
+
 site:
   template: book-theme
   logo: logo.png
-  
-  # 3. [추가] 전체 URL (GitHub Pages 배포 시 깨짐 방지용 필수 설정)
-  url: https://ddokbaro.github.io/DHTextBook
-  base_url: /DHTextBook/ 
-  
-  # 4. [추가] 우측 상단 Colab 및 다운로드 버튼 등 액션 설정
+
+  # --- 👇 다운로드 버튼 노출 ---
+  downloads:
+    - id: dh-textbook-pdf
+      title: "PDF 다운로드"
+      filename: "dh-textbook.pdf"
+      
   actions:
     - title: Open in Colab
       icon: rocket
