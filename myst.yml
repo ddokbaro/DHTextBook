@@ -3,28 +3,24 @@ project:
   id: dh-textbook
   title: "디지털 인문학 교과서"
   description: 이론에서 구현까지, 인문학도를 위한 통합 가이드
-  # authors:
-  #   - name:
-  #       given: "바로"
-  #       family: "김"
-  #     affiliations:
-  #       - "한국학중앙연구원"
-
-  # 1. GitHub 저장소 링크 (형식 수정: 안정적인 문자열 방식 권장)
   github: https://github.com/ddokbaro/DHTextBook
 
-# --- 👇 찾아주신 PDF export (Typst 엔진) 코드 적용 ---
+  # [기존] PDF export (Typst 엔진) 코드 
   exports:
     - id: dh-textbook-pdf
       format: typst
       output: exports/dh-textbook.pdf
-      # template: templates/plain_typst_book  <-- 커스텀 템플릿 폴더가 없다면 에러가 나므로 일단 주석 처리합니다.
       fontstyle: "Noto Sans CJK KR"
       fontsize: 10
       linespacing: 1.25
       show_ToC: true
-# --------------------------------------------------
 
+  # --- 👇 [핵심 해결책] 다운로드 설정을 site에서 project로 옮겨옵니다! ---
+  downloads:
+    - id: dh-textbook-pdf
+      title: "PDF 다운로드"
+      filename: "dh-textbook.pdf"
+  # -------------------------------------------------------------------------
   # ---------------------------------------------------------
   # [목차 구조] (기존과 동일하게 유지)
   # ---------------------------------------------------------
@@ -84,11 +80,7 @@ site:
   template: book-theme
   logo: logo.png
 
-  # --- 👇 다운로드 버튼 노출 ---
-  downloads:
-    - id: dh-textbook-pdf
-      title: "PDF 다운로드"
-      filename: "dh-textbook.pdf"
+  # (여기에 있던 downloads는 위로 옮겼으므로 삭제합니다)
       
   actions:
     - title: Open in Colab
