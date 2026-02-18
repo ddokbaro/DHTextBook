@@ -60,6 +60,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g mystmd
+          echo "$(npm bin -g)" >> $GITHUB_PATH
           pip install jupyter-book jupytext
 
       # 1. PDF만 먼저 굽기
