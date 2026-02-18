@@ -55,15 +55,15 @@ jobs:
           myst build --all
       # --------------------------------------------------------
 
-      # [핵심 해결책] Jekyll이 파일들을 무시하지 못하게 '방패(.nojekyll)'를 만듭니다!
+# [핵심 해결책] Jekyll이 파일들을 무시하지 못하게 '방패(.nojekyll)'를 만듭니다!
       - name: Disable Jekyll
         run: |
-          touch _build/html/.nojekyll
+          touch _build/site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "_build/html"
+          path: "_build/site"
 
       - name: Deploy to GitHub Pages
         id: deployment
