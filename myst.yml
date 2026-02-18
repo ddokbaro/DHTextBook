@@ -16,10 +16,10 @@ project:
       show_ToC: true
 
   # --- 👇 [핵심 해결책] 다운로드 설정을 site에서 project로 옮겨옵니다! ---
+# --- 👇 [수정] mystmd v2 문법에 맞게 file 경로 지정 ---
   downloads:
-    - id: dh-textbook-pdf
-      title: "PDF 다운로드"
-      filename: "dh-textbook.pdf"
+    - title: "PDF 다운로드"
+      file: exports/dh-textbook.pdf
   # -------------------------------------------------------------------------
   # ---------------------------------------------------------
   # [목차 구조] (기존과 동일하게 유지)

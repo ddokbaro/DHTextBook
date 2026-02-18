@@ -51,8 +51,8 @@ jobs:
       - name: Build the book
         run: |
           export BASE_URL="/DHTextBook"
-          myst build             # 1. 먼저 myst.yml에 정의된 PDF(Typst)를 굽습니다.
-          myst build --html      # 2. 완성된 PDF를 포함하여 최종 HTML 웹사이트를 _build/html에 생성합니다.
+          # 👇 [수정] HTML과 PDF를 동시에 생성하도록 명령어를 통합합니다.
+          myst build --html --pdf
       # --------------------------------------------------------
 
 # [원상 복구] 다시 html 폴더에 방패를 만듭니다!
