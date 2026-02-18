@@ -37,10 +37,6 @@ GitHub Actions가 배포를 수행할 수 있도록 권한을 열어주어야 �
 2. 왼쪽 사이드바에서 **Pages** 메뉴를 선택합니다.
 3. **Build and deployment** 섹션의 **Source** 항목을 `Deploy from a branch`에서 **`GitHub Actions`**로 변경합니다.
 
-:::{figure} https://docs.github.com/assets/cb-33924/images/help/pages/pages-source-setting-actions.png
-:align: center
-:width: 80%
-:alt: GitHub Pages Source 설정 화면
 
 Source를 반드시 **GitHub Actions**로 변경해야 합니다.
 :::

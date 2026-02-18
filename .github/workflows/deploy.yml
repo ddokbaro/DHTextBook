@@ -78,11 +78,13 @@ jobs:
         run: |
           echo "Listing files in exports directory:"
           ls -R exports
+
       - name: Copy exports into HTML build
         run: |
           if [ -d exports ]; then
             mkdir -p _build/html/exports
-            cp -v exports/*.pdf _build/html/exports/
+            # 👇 끝에 || true 를 붙이면, PDF가 없어서 에러가 나더라도 워크플로를 강제로 멈추지 않고 통과시킵니다.
+            cp -v exports/*.pdf _build/html/exports/ || true
           fi
 
       # Github Page의 Jekyll(기본 정적 사이트 빌더) 규칙 미사용 처리
