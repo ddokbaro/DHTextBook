@@ -53,7 +53,7 @@ description: "수학적 불완전성에서 암호 해독, 그리고 인공지능
 
 영국 블레츨리 파크(Bletchley Park)의 암호 해독반에 합류한 튜링은, 인간의 직관이 아닌 "기계의 힘"으로 기계(에니그마)를 대적해야 한다고 믿었습니다. 그는 폴란드 암호학자들의 기초 연구를 발전시켜 **봄브**(Bombe)라는 거대한 전기기계식 장치를 설계했습니다.
 
-:::{figure} .../TuringBombeBletchleyPark.jpg
+:::{figure} ../images/TuringBombeBletchleyPark.jpg
 :name: turing-bombe
 :width: 600px
 :align: center
