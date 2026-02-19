@@ -92,7 +92,7 @@ graph TD
 이는 SSD의 작동 원리와 소름 끼치도록 닮아 있습니다. SSD는 새로운 데이터를 쓰기(기억) 위해 반드시 기존 데이터를 고전압으로 지워야(망각) 하며, 이 과정이 반복될수록 매체는 물리적 죽음(수명 고갈)에 가까워집니다. 기억하려는 행위 자체가 매체의 파괴를 가속화하는 것입니다.
 
 :::{seealso} 📖 추천 문헌 및 웹 리소스
-저장 매체의 진화와 디지털 아카이브의 철학을 다룬 핵심 문헌입니다. (KADH 인용 규정 준수)
+저장 매체의 진화와 디지털 아카이브의 철학을 다룬 핵심 문헌입니다. 
 
 * **Ernst, W. (2013).** <Digital Memory and the Archive>. University of Minnesota Press. <a href="[https://search.worldcat.org/title/800038481](https://search.worldcat.org/title/800038481)" target="_blank">WorldCat URI</a>
 * **Derrida, J. (1996).** <Archive Fever: A Freudian Impression>. University of Chicago Press. <a href="[https://search.worldcat.org/title/33946890](https://search.worldcat.org/title/33946890)" target="_blank">WorldCat URI</a>
