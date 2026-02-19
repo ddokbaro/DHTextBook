@@ -53,7 +53,7 @@ project:
         # [세 번째 주제: 연결의 확장]
         - file: content/computing/network_protocols.md
 
-    - title: "Part 3. 문자의 디지털 재현"
+    - title: "Part 3. 문자의 디지털 재현" #키보드와 같은 입력 장치도 같이 다루어야.
       children:
         - file: content/encoding/ascii_history.md
         - file: content/encoding/korean_encoding.md
