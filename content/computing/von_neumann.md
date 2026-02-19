@@ -57,21 +57,21 @@ description: "악마적인 천재성의 발현, 그리고 기계의 물질성에
 :::{mermaid}
 graph TD
     subgraph CPU [중앙처리장치 CPU]
-        CA[중앙 산술 장치 CA<br>(실제 계산을 하는 요리사)]
-        CC[중앙 제어 장치 CC<br>(요리 순서를 지시하는 지휘자)]
+        CA["중앙 산술 장치 CA<br>(실제 계산을 하는 요리사)"]
+        CC["중앙 제어 장치 CC<br>(요리 순서를 지시하는 지휘자)"]
     end
 
-    M[(메모리 M<br>재료와 레시피가 섞여 있는 창고)]
+    M[("메모리 M<br>재료와 레시피가 섞여 있는 창고")]
     
     subgraph IO [입출력 장치]
         I[입력 장치 I]
         O[출력 장치 O]
     end
     
-    M <-->|데이터 & 명령어 버스| CA
-    M <-->|명령어 인출| CC
-    CC -->|제어 신호| CA
-    CC -->|제어 신호| M
+    M <-->|"데이터 & 명령어 버스"| CA
+    M <-->|"명령어 인출"| CC
+    CC -->|"제어 신호"| CA
+    CC -->|"제어 신호"| M
     I --> M
     M --> O
 :::
@@ -113,9 +113,12 @@ graph TD
 
 범용 기계의 출현은 인문학을 포함한 전 학문 분야에서 **컴퓨팅적 전환**(The Computational Turn)을 야기했습니다.
 
-### 지식의 공동 생산과 아카이브
+### 지식의 공동 생산과 집단 지성
 
-디지털인문학 연구는 더 이상 고립된 연구자의 밀실 사유가 아닙니다. <한국 근대 지식인 아카이브>와 같은 프로젝트가 보여주듯, 폰 노이만 아키텍처의 네트워크 위에서 연구자들은 기계 판독 가능한 데이터를 생성하고 협업하며 **지식의 공동 생산**(Co-production of Knowledge)을 수행합니다.
+디지털인문학 연구는 더 이상 고립된 연구자의 밀실 사유가 아닙니다. 폰 노이만 아키텍처가 제공하는 메모리의 범용성은 수많은 사람이 동시에 접근하고 수정할 수 있는 거대한 지식의 저장소를 가능케 했습니다.
+
+* **위키피디아(Wikipedia)와 위키데이터(Wikidata):** 전 지구적 규모의 집단 지성이 실시간으로 지식을 갱신하고 구조화하는 이 거대한 프로젝트들은, 지식이 고정된 인쇄물이 아니라 끊임없이 덮어써질 수 있는(rewritable) 메모리 위의 데이터가 되었기에 가능했습니다.
+* **우리말샘:** 한국의 개방형 국어사전인 우리말샘은 소수의 언어학자가 독점하던 '언어의 정의 권력'을 일반 대중에게 분산시킨 사례입니다. 시민들이 직접 단어를 등록하고 뜻풀이를 수정하는 과정은 폰 노이만 기계 위에서 일어나는 **지식의 공동 생산**(Co-production of Knowledge)을 상징적으로 보여줍니다.
 
 ### 인공지능과 편향
 
@@ -127,7 +130,7 @@ graph TD
 * **Von Neumann, J. (1945).** "First Draft of a Report on the EDVAC". University of Pennsylvania. <a href="https://doi.org/10.5479/sil.538961.39088011475779" target="_blank">DOI: 10.5479/sil.538961.39088011475779</a>
 * **Goldstine, H. H. (1980).** <The Computer from Pascal to von Neumann>. Princeton University Press. <a href="https://www.jstor.org/stable/j.ctt7ZVg9" target="_blank">JSTOR URI</a>
 * **Dyson, G. (2012).** <Turing's Cathedral: The Origins of the Digital Universe>. Pantheon Books. <a href="https://search.worldcat.org/title/745979568" target="_blank">WorldCat URI</a>
-* **장문석 외 (2020).** "디지털 인문학과 지식의 공동생산 ― 위키 플랫폼과 <한국 근대 지식인 아카이브> 편찬". <상허학보>. 59. 289-326. <a href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002600213" target="_blank">KCI URI</a>
+* **Vrandečić, D., Krötzsch, M. (2014).** "Wikidata: a free collaborative knowledgebase". <Communications of the ACM>. 57(10). 78-85. <a href="https://doi.org/10.1145/2629489" target="_blank">DOI: 10.1145/2629489</a>
 * **Wigner, E. P. (1992).** <The Recollections of Eugene P. Wigner>. Plenum Press. <a href="https://doi.org/10.1007/978-1-4899-6313-2" target="_blank">DOI: 10.1007/978-1-4899-6313-2</a>
 :::
 
