@@ -70,16 +70,16 @@ description: "마이크로프로세서 혁명에서 인공지능 시대의 물�
 
 :::{mermaid}
 graph LR
-    subgraph Processor [고속 프로세서 CPU/GPU]
-        ALU[연산 장치]
-        Control[제어 장치]
+    subgraph Processor ["고속 프로세서 CPU/GPU"]
+        ALU["연산 장치"]
+        Control["제어 장치"]
     end
 
-    subgraph Memory [대용량 메모리 DRAM]
-        Data[데이터 &<br>모델 가중치]
+    subgraph Memory ["대용량 메모리 DRAM"]
+        Data["데이터 &<br>모델 가중치"]
     end
 
-    Processor <==>|병목 (Bottleneck)<br>좁고 느린 데이터 이동 통로| Memory
+    Processor <==>|"병목 (Bottleneck)<br>좁고 느린 데이터 이동 통로"| Memory
     
     style Processor fill:#f9f,stroke:#333,stroke-width:2px
     style Memory fill:#ccf,stroke:#333,stroke-width:2px
