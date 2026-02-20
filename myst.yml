@@ -51,14 +51,21 @@ project:
             - file: content/computing/io_interface.md
 
         # [세 번째 주제: 연결의 확장]
-        - file: content/computing/network_protocols.md
+        - file: content/computing/network_overview.md
+          children:
+            - file: content/computing/network_history.md
+            - file: content/computing/http_protocol.md
+            - file: content/computing/web_architecture.md
+            - file: content/computing/philosophy_and_web3.md
 
-    - title: "Part 3. 문자의 디지털 재현" #키보드와 같은 입력 장치도 같이 다루어야.
+    - title: "Part 3. 문자의 디지털 재현" 
       children:
         - file: content/encoding/ascii_history.md
-        - file: content/encoding/korean_encoding.md
+        - file: content/encoding/cjk_encoding.md
         - file: content/encoding/unicode_utf8.md
+        - file: content/encoding/cjk_input_methods.md
 
+        
     - title: "Part 4. 비정형 텍스트: 정규표현식"
       children:
         - file: content/regex/plain_text.md
