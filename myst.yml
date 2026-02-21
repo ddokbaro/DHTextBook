@@ -129,14 +129,12 @@ project:
     # Level 1 호스트(index.md) 아래 5개의 독립된 Level 2 챕터들
     # ==========================================
     - title: "Part 4. 데이터의 형태와 인문학적 모델링"
-      file: content/data_intro/index.md
       children:
         - file: content/data_intro/data_and_machine_readability.md
         - file: content/data_intro/flat_data_and_rdb.md
         - file: content/data_intro/hierarchical_data_and_xml.md
         - file: content/data_intro/graph_data_and_ai_labeling.md
         - file: content/data_intro/public_data_and_practice.md
-
 
     - title: "Part 5. 비정형 텍스트: 정규표현식"
       children:
