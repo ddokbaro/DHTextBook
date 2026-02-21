@@ -67,9 +67,9 @@ graph TD
     style Graph fill:#e6f3ff,stroke:#0066cc,stroke-width:3px
     style Content fill:#ffffe0,stroke:#ffd700,stroke-width:2px
     style AI fill:#e6ffe6,stroke:#00cc66,stroke-width:2px
+````
 
 결론적으로, 디지털 인문학의 데이터 모델링은 낡은 인문학을 IT 기술로 포장하는 얄팍한 치장이 아닙니다. 그것은 인류의 지적 유산을 가장 진보된 연산 알고리즘과 결합시켜, 다가오는 인공지능 시대의 지식 권력을 주도하기 위한 가장 강력하고 근본적인 자산화 실천입니다.
-````
 
 :::{seealso} 📖 참고문헌
 

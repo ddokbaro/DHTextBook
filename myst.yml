@@ -28,7 +28,6 @@ project:
     - file: intro.md
 
     - title: "Part 1. 디지털 인문학의 지평"
-      file: content/intro/index.md
       children:
         # ==========================================
         # [Level 2] 1. 패러다임의 전환: 철학과 기원
@@ -62,11 +61,11 @@ project:
         - title: "분과학문과 연산적 방법론의 도약"
           file: content/theory/disciplinary_methodologies.md
           children:
-            - file: content/theory/dh_literature.md 
+            - file: content/theory/dh_literature_cases.md 
               # 내용: 어문학 - 프랑코 모레티의 멀리서 읽기(Distant Reading)와 대규모 텍스트 분석
-            - file: content/theory/dh_history.md 
+            - file: content/theory/dh_history_cases.md 
               # 내용: 역사학 - 기계가독성, 공간 인문학(GIS), 복잡계 네트워크 분석(SNA)
-            - file: content/theory/dh_philosophy.md 
+            - file: content/theory/dh_philosophy_cases.md 
               # 내용: 철학 - 기호주의(온톨로지) 대 연결주의(머신러닝), 도덕 윤리의 계산가능성
 
         # ==========================================
