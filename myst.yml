@@ -34,63 +34,63 @@ project:
         # [Level 2] 1. 패러다임의 전환: 철학과 기원
         # ==========================================
         - title: "디지털 인문학의 철학과 기원"
-          file: content/intro/philosophy_and_origin.md
+          file: content/theory/philosophy_and_origin.md
           children:
-            - file: content/intro/fourth_industrial_revolution.md 
+            - file: content/theory/Digital_Turn.md 
               # 내용: 4차 산업혁명과 인간-컴퓨터 협업의 본질 (김바로 교수 모델)
-            - file: content/intro/history_of_dh.md 
+            - file: content/theory/history_of_dh.md 
               # 내용: 로베르토 부사부터 빅 텐트 논쟁까지 인문 컴퓨팅의 역사
-            - file: content/intro/data_vs_capta.md 
+            - file: content/theory/data_vs_capta.md 
               # 내용: '주어진 것(Data)'에서 '취해진 것(Capta)'으로의 인식론적 대전환
 
         # ==========================================
         # [Level 2] 2. 지식의 생애주기와 연산적 리터러시
         # ==========================================
         - title: "지식의 생애주기와 연산적 리터러시"
-          file: content/intro/knowledge_lifecycle.md
+          file: content/theory/knowledge_lifecycle.md
           children:
-            - file: content/intro/five_step_pipeline.md 
+            - file: content/theory/five_step_pipeline.md 
               # 내용: 설계-구축-분석-해석-시각화로 이어지는 DH 파이프라인
-            - file: content/intro/coding_literacy.md 
+            - file: content/theory/coding_literacy.md 
               # 내용: 블랙박스(GUI) 도구의 종속성 탈피와 비판적 컴퓨팅(코딩)의 당위성
-            - file: content/intro/collaborative_lab.md 
+            - file: content/theory/collaborative_lab.md 
               # 내용: 고독한 에세이에서 다학제적 랩(Lab)과 프로젝트 포트폴리오로의 전환
 
         # ==========================================
         # [Level 2] 3. 분과학문과 연산적 방법론의 도약
         # ==========================================
         - title: "분과학문과 연산적 방법론의 도약"
-          file: content/intro/disciplinary_methodologies.md
+          file: content/theory/disciplinary_methodologies.md
           children:
-            - file: content/intro/dh_literature.md 
+            - file: content/theory/dh_literature.md 
               # 내용: 어문학 - 프랑코 모레티의 멀리서 읽기(Distant Reading)와 대규모 텍스트 분석
-            - file: content/intro/dh_history.md 
+            - file: content/theory/dh_history.md 
               # 내용: 역사학 - 기계가독성, 공간 인문학(GIS), 복잡계 네트워크 분석(SNA)
-            - file: content/intro/dh_philosophy.md 
+            - file: content/theory/dh_philosophy.md 
               # 내용: 철학 - 기호주의(온톨로지) 대 연결주의(머신러닝), 도덕 윤리의 계산가능성
 
         # ==========================================
         # [Level 2] 4. 비판적 디지털 인문학과 공공성
         # ==========================================
         - title: "비판적 디지털 인문학과 매체의 실천"
-          file: content/intro/critical_dh_and_public.md
+          file: content/theory/critical_dh_and_public.md
           children:
-            - file: content/intro/algorithms_of_oppression.md 
+            - file: content/theory/algorithms_of_oppression.md 
               # 내용: 데이터의 위계성, 알고리즘 편향성, 그리고 식민주의적 데이터 해체
-            - file: content/intro/public_dh_and_glam.md 
+            - file: content/theory/public_dh_and_glam.md 
               # 내용: 문화 유산 기관(GLAM)과의 협력, 크라우드소싱, 인터페이스의 권력성
-            - file: content/intro/generative_ai_ethics.md 
+            - file: content/theory/generative_ai_ethics.md 
               # 내용: 생성형 AI(LLM) 시대의 도래와 인문학적 설명 가능성(XAI)의 위기
 
         # ==========================================
         # [Level 2] 5. 생태계와 미래 비전
         # ==========================================
         - title: "디지털 인문학의 생태계와 직업적 비전"
-          file: content/intro/dh_ecosystem_and_career.md
+          file: content/theory/dh_ecosystem_and_career.md
           children:
-            - file: content/intro/knowledge_assetization.md 
+            - file: content/theory/knowledge_assetization.md 
               # 내용: 데이터 모델링(RDF 트리플)을 통한 인문 지식의 자산화 실천
-            - file: content/intro/career_and_prospects.md 
+            - file: content/theory/career_and_prospects.md 
               # 내용: 학문 후속 세대를 위한 융합 교육과 실무적 생태계 전망 (먹거리)
 
     - title: "Part 2. 컴퓨팅과 네트워크"
@@ -228,6 +228,9 @@ project:
         - file: content/infra/git_github.md
         - file: content/infra/myst_syntax_guide.md
         - file: content/infra/publish_environment.md
+
+    - title: "Part 90. 지속 가능한 연구 인프라"
+
 
 # ==========================================
 # [사이트 디자인 및 추가 기능 설정]
