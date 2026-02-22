@@ -145,17 +145,126 @@ project:
             - file: content/regex/regex_practice_cleansing.md
             - file: content/regex/regex_practice_structuring.md
 
+    - title: "Part 5. 비정형 텍스트: 정규표현식"
+      children:
+        - file: content/regex/regex_environment.md
+        - file: content/regex/regex_syntax.md
+        - file: content/regex/regex_practice.md
+          children:
+            - file: content/regex/regex_practice_cleansing.md
+            - file: content/regex/regex_practice_structuring.md
+            # [추가] VS Code 다중 커서 및 정규표현식 실무 (xml 폴더 내 파일이지만 내용상 이곳에 배치)
+            - file: content/xml/vscode_regex_multicursor.md
+
     - title: "Part 6. 전자문서와 하이퍼텍스트: XML과 TEI"
       children:
         - file: content/xml/xml_fundamentals.md
         - file: content/xml/tei_guidelines.md
         - file: content/xml/digital_archives_practice.md
+        
+        # [추가] 1. XML 편찬 워크플로우와 AI 협업
+        - file: content/xml/xml_compilation_paradigm_shift.md
+          children:
+            - file: content/xml/llm_markup_prompting.md
+            - file: content/xml/human_in_the_loop_validation.md
+            
+        # [추가] 2. DH 학계 표준 도구 (Oxygen & VS Code)
+        - file: content/xml/xml_tools_oxygen_author.md
+          children:
+            - file: content/xml/xml_tools_validation.md
+            - file: content/xml/xml_tools_xpath_xslt.md
+        - file: content/xml/vscode_xml_plugins.md
+        
+        # [추가] 3. 한국 인문학 데이터 마크업 케이스 스터디
+        - file: content/xml/case_study_magazine.md
+          children:
+            - file: content/xml/case_study_nikh_philosophy.md
+            - file: content/xml/case_study_hierarchy_metadata.md
+            - file: content/xml/case_study_semantic_index.md
+            - file: content/xml/case_study_media_conversion.md
+            
+        - file: content/xml/case_study_sillok.md
+          children:
+            - file: content/xml/case_study_sillok_hierarchy.md
+            - file: content/xml/case_study_sillok_time.md
+            - file: content/xml/case_study_sillok_entities.md
+            - file: content/xml/case_study_sillok_gaiji.md
+            
+        - file: content/xml/case_study_sejong_corpus.md
 
     - title: "Part 7. 구조적 데이터: RDB와 SQL"
       children:
-        - file: content/rdb/tabular_data.md
-        - file: content/rdb/rdb_concept.md
-        - file: content/rdb/sql_basic_and_advanced.md
+        # ---------------------------------------------------------
+        # 1. RDB 도입의 당위성: 스프레드시트에서 관계형 모델로
+        # ---------------------------------------------------------
+        - file: content/rdb/intro_spreadsheet_to_rdb.md
+          title: "플랫 데이터의 한계와 구글 스프레드시트 기반의 사전 정규화 경험"
+          children:
+            - file: content/rdb/spreadsheet_flat_data_limits.md
+              title: "인문학자의 흔한 실수: 하나의 셀에 욱여넣은 다중 데이터의 치명적 한계"
+            - file: content/rdb/spreadsheet_relational_experience.md
+              title: "시트(Sheet) 분리와 VLOOKUP/INDEX-MATCH를 통한 관계형 연결의 '아하 모먼트'"
+
+        # ---------------------------------------------------------
+        # 2. 다기종 RDB 환경 구축과 클라이언트 세팅
+        # ---------------------------------------------------------
+        - file: content/rdb/rdb_fundamentals_and_environment.md
+          title: "RDB 개론과 다기종 실습 환경 구축"
+          children:
+            - file: content/rdb/env_serverless_sqlite.md
+              title: "RDB의 역사와 무서버(Serverless) 교육 환경: 웹 샌드박스와 SQLite의 활용"
+            - file: content/rdb/env_local_and_cloud.md
+              title: "클라이언트-서버 데몬의 이해: XAMPP 로컬 스택 및 클라우드 프리 티어의 함정"
+            - file: content/rdb/env_universal_clients.md
+              title: "범용 데이터베이스 클라이언트: DBeaver와 HeidiSQL의 아키텍처 및 보안 세팅"
+
+        # ---------------------------------------------------------
+        # 3. 데이터 모델링과 기술 문서(명세서) 작성
+        # ---------------------------------------------------------
+        - file: content/rdb/historical_data_modeling.md
+          title: "인문학 지식의 전산적 재구축과 ERD 모델링"
+          children:
+            - file: content/rdb/modeling_normalization_1_to_3.md
+              title: "조선시대 인물·관직 데이터로 배우는 제1~제3 정규화(Normalization)"
+            - file: content/rdb/modeling_historical_ambiguity.md
+              title: "역사적 모호성 해결 패턴: 정밀도 코드와 이벤트 중심 N:M 교차 테이블"
+            - file: content/rdb/modeling_temporal_spatiotemporal.md
+              title: "시공간 변동성(Temporal) 모델링과 ERDCloud/Draw.io 기반 협업 시각화"
+            - file: content/rdb/modeling_data_dictionary.md
+              title: "설계의 완성: ERD를 넘어선 테이블 기술 명세서(Data Dictionary) 작성 실무"
+
+        # ---------------------------------------------------------
+        # 4. 데이터 파이프라인: 임포트와 트러블슈팅
+        # ---------------------------------------------------------
+        - file: content/rdb/rdb_data_import_export.md
+          title: "플랫 파일 처리와 데이터 파이프라인 구축"
+          children:
+            - file: content/rdb/pipeline_csv_import_troubleshooting.md
+              title: "CSV/TXT 데이터 임포트 실무와 인코딩(UTF-8 BOM) 트러블슈팅"
+
+        # ---------------------------------------------------------
+        # 5. SQL 데이터 제어와 이기종 방언의 이해
+        # ---------------------------------------------------------
+        - file: content/rdb/sql_dialects_and_queries.md
+          title: "SQL 기초와 이기종 방언(Dialects)의 이해"
+          children:
+            - file: content/rdb/sql_ddl_dml_comparison.md
+              title: "DDL과 DML의 구조 및 이기종 SQL 문법 비교 (MSSQL vs MySQL)"
+            - file: content/rdb/sql_pk_and_pagination.md
+              title: "PK 자동 증가 메커니즘과 문자열/페이징 처리의 철학적 차이"
+            - file: content/rdb/sql_historical_data_practice.md
+              title: "한국학 데이터 추출 실습: 패턴 매칭(LIKE)과 문자열 함수 활용"
+            - file: content/rdb/sql_join_and_subquery.md
+              title: "관계망 복원 실습: 다중 테이블 JOIN 연산과 서브쿼리(Subquery)의 응용"
+
+        # ---------------------------------------------------------
+        # 6. 에필로그: 데이터의 개방과 API 서비스
+        # ---------------------------------------------------------
+        - file: content/rdb/data_as_a_service.md
+          title: "데이터의 서비스화(DaaS): 내 데이터베이스를 세상과 연결하기"
+          children:
+            - file: content/rdb/api_deployment_datasette.md
+              title: "경량 도구(Datasette/BaaS)를 활용한 코딩 없는 REST API 배포 실무"
 
     - title: "Part 8. 의미와 연결: 시맨틱 웹과 RDF"
       children:
