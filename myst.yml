@@ -22,321 +22,719 @@ project:
       filename: "dh-textbook.pdf"
 
   # ==========================================
-  # [목차 구조]
-  # ==========================================
-  toc:
-    - file: intro.md
-
-    - title: "Part 1. 디지털 인문학의 지평"
-      children:
-        # ==========================================
-        # [Level 2] 1. 패러다임의 전환: 철학과 기원
-        # ==========================================
-        - title: "디지털 인문학의 철학과 기원"
-          file: content/theory/philosophy_and_origin.md
-          children:
-            - file: content/theory/Digital_Turn.md 
-              # 내용: 4차 산업혁명과 인간-컴퓨터 협업의 본질 (김바로 교수 모델)
-            - file: content/theory/history_of_dh.md 
-              # 내용: 로베르토 부사부터 빅 텐트 논쟁까지 인문 컴퓨팅의 역사
-            - file: content/theory/data_vs_capta.md 
-              # 내용: '주어진 것(Data)'에서 '취해진 것(Capta)'으로의 인식론적 대전환
-
-        # ==========================================
-        # [Level 2] 2. 지식의 생애주기와 연산적 리터러시
-        # ==========================================
-        - title: "지식의 생애주기와 연산적 리터러시"
-          file: content/theory/knowledge_lifecycle.md
-          children:
-            - file: content/theory/five_step_pipeline.md 
-              # 내용: 설계-구축-분석-해석-시각화로 이어지는 DH 파이프라인
-            - file: content/theory/coding_literacy.md 
-              # 내용: 블랙박스(GUI) 도구의 종속성 탈피와 비판적 컴퓨팅(코딩)의 당위성
-            - file: content/theory/collaborative_lab.md 
-              # 내용: 고독한 에세이에서 다학제적 랩(Lab)과 프로젝트 포트폴리오로의 전환
-
-        # ==========================================
-        # [Level 2] 3. 분과학문과 연산적 방법론의 도약
-        # ==========================================
-        - title: "분과학문과 연산적 방법론의 도약"
-          file: content/theory/disciplinary_methodologies.md
-          children:
-            - file: content/theory/dh_literature_cases.md 
-              # 내용: 어문학 - 프랑코 모레티의 멀리서 읽기(Distant Reading)와 대규모 텍스트 분석
-            - file: content/theory/dh_history_cases.md 
-              # 내용: 역사학 - 기계가독성, 공간 인문학(GIS), 복잡계 네트워크 분석(SNA)
-            - file: content/theory/dh_philosophy_cases.md 
-              # 내용: 철학 - 기호주의(온톨로지) 대 연결주의(머신러닝), 도덕 윤리의 계산가능성
-
-        # ==========================================
-        # [Level 2] 4. 비판적 디지털 인문학과 공공성
-        # ==========================================
-        - title: "비판적 디지털 인문학과 매체의 실천"
-          file: content/theory/critical_dh_and_public.md
-          children:
-            - file: content/theory/algorithms_of_oppression.md 
-              # 내용: 데이터의 위계성, 알고리즘 편향성, 그리고 식민주의적 데이터 해체
-            - file: content/theory/public_dh_and_glam.md 
-              # 내용: 문화 유산 기관(GLAM)과의 협력, 크라우드소싱, 인터페이스의 권력성
-            - file: content/theory/generative_ai_ethics.md 
-              # 내용: 생성형 AI(LLM) 시대의 도래와 인문학적 설명 가능성(XAI)의 위기
-
-        # ==========================================
-        # [Level 2] 5. 생태계와 미래 비전
-        # ==========================================
-        - title: "디지털 인문학의 생태계와 직업적 비전"
-          file: content/theory/dh_ecosystem_and_career.md
-          children:
-            - file: content/theory/knowledge_assetization.md 
-              # 내용: 데이터 모델링(RDF 트리플)을 통한 인문 지식의 자산화 실천
-            - file: content/theory/career_and_prospects.md 
-              # 내용: 학문 후속 세대를 위한 융합 교육과 실무적 생태계 전망 (먹거리)
-
-    - title: "Part 2. 컴퓨팅과 네트워크"
-      children:
-        # [첫 번째 주제: 컴퓨팅의 역사와 철학]
-        - file: content/computing/history_overview.md
-          children:
-            - file: content/computing/turing_machine.md
-            - file: content/computing/von_neumann.md
-            - file: content/computing/moores_law.md
-
-        # [두 번째 주제: 현대 하드웨어의 구조와 진화]
-        - file: content/computing/hardware_overview.md
-          children:
-            - file: content/computing/logic_and_bit.md
-            - file: content/computing/storage.md
-            - file: content/computing/gpu.md
-            - file: content/computing/io_interface.md
-
-        # [세 번째 주제: 연결의 확장]
-        - file: content/computing/network_overview.md
-          children:
-            - file: content/computing/network_history.md
-            - file: content/computing/http_protocol.md
-            - file: content/computing/web_architecture.md
-            - file: content/computing/philosophy_and_web3.md
-
-    - title: "Part 3. 문자의 디지털 재현" 
-      children:
-        - file: content/encoding/ascii_history.md
-        - file: content/encoding/cjk_encoding.md
-        - file: content/encoding/unicode_utf8.md
-        - file: content/encoding/cjk_input_methods.md
-
+# [목차 구조]
 # ==========================================
-    # [Part 4] 데이터의 형태와 인문학적 모델링 (방금 완료한 데이터 개론)
-    # Level 1 호스트(index.md) 아래 5개의 독립된 Level 2 챕터들
-    # ==========================================
-    - title: "Part 4. 데이터의 형태와 인문학적 모델링"
+toc:
+  - file: intro.md
+
+  - title: "Part 01. 디지털 인문학의 지평"
+    children:
+      # ==========================================
+      # [Level 2] 1. 패러다임의 전환: 철학과 기원
+      # ==========================================
+      - title: "디지털 인문학의 철학과 기원"
+        file: content/theory/philosophy_and_origin.md
+        children:
+          - file: content/theory/Digital_Turn.md 
+            # 내용: 4차 산업혁명과 인간-컴퓨터 협업의 본질 (김바로 교수 모델)
+          - file: content/theory/history_of_dh.md 
+            # 내용: 로베르토 부사부터 빅 텐트 논쟁까지 인문 컴퓨팅의 역사
+          - file: content/theory/data_vs_capta.md 
+            # 내용: '주어진 것(Data)'에서 '취해진 것(Capta)'으로의 인식론적 대전환
+
+      # ==========================================
+      # [Level 2] 2. 지식의 생애주기와 연산적 리터러시
+      # ==========================================
+      - title: "지식의 생애주기와 연산적 리터러시"
+        file: content/theory/knowledge_lifecycle.md
+        children:
+          - file: content/theory/five_step_pipeline.md 
+            # 내용: 설계-구축-분석-해석-시각화로 이어지는 DH 파이프라인
+          - file: content/theory/coding_literacy.md 
+            # 내용: 블랙박스(GUI) 도구의 종속성 탈피와 비판적 컴퓨팅(코딩)의 당위성
+          - file: content/theory/collaborative_lab.md 
+            # 내용: 고독한 에세이에서 다학제적 랩(Lab)과 프로젝트 포트폴리오로의 전환
+
+      # ==========================================
+      # [Level 2] 3. 분과학문과 연산적 방법론의 도약
+      # ==========================================
+      - title: "분과학문과 연산적 방법론의 도약"
+        file: content/theory/disciplinary_methodologies.md
+        children:
+          - file: content/theory/dh_literature_cases.md 
+            # 내용: 어문학 - 프랑코 모레티의 멀리서 읽기(Distant Reading)와 대규모 텍스트 분석
+          - file: content/theory/dh_history_cases.md 
+            # 내용: 역사학 - 기계가독성, 공간 인문학(GIS), 복잡계 네트워크 분석(SNA)
+          - file: content/theory/dh_philosophy_cases.md 
+            # 내용: 철학 - 기호주의(온톨로지) 대 연결주의(머신러닝), 도덕 윤리의 계산가능성
+
+      # ==========================================
+      # [Level 2] 4. 비판적 디지털 인문학과 매체의 실천
+      # ==========================================
+      - title: "비판적 디지털 인문학과 매체의 실천"
+        file: content/theory/critical_dh_and_public.md
+        children:
+          - file: content/theory/algorithms_of_oppression.md 
+            # 내용: 데이터의 위계성, 알고리즘 편향성, 그리고 식민주의적 데이터 해체
+          - file: content/theory/public_dh_and_glam.md 
+            # 내용: 문화 유산 기관(GLAM)과의 협력, 크라우드소싱, 인터페이스의 권력성
+          - file: content/theory/generative_ai_ethics.md 
+            # 내용: 생성형 AI(LLM) 시대의 도래와 인문학적 설명 가능성(XAI)의 위기
+
+      # ==========================================
+      # [Level 2] 5. 생태계와 미래 비전
+      # ==========================================
+      - title: "디지털 인문학의 생태계와 직업적 비전"
+        file: content/theory/dh_ecosystem_and_career.md
+        children:
+          - file: content/theory/knowledge_assetization.md 
+            # 내용: 데이터 모델링(RDF 트리플)을 통한 인문 지식의 자산화 실천
+          - file: content/theory/career_and_prospects.md 
+            # 내용: 학문 후속 세대를 위한 융합 교육과 실무적 생태계 전망 (먹거리)
+
+  - title: "Part 02. 컴퓨팅과 네트워크"
+    children:
+      - title: "컴퓨팅의 역사와 철학"
+        file: content/computing/history_overview.md
+        children:
+          - file: content/computing/turing_machine.md
+          - file: content/computing/von_neumann.md
+          - file: content/computing/moores_law.md
+
+      - title: "현대 하드웨어의 구조와 진화"
+        file: content/computing/hardware_overview.md
+        children:
+          - file: content/computing/logic_and_bit.md
+          - file: content/computing/storage.md
+          - file: content/computing/gpu.md
+          - file: content/computing/io_interface.md
+
+      - title: "연결의 확장"
+        file: content/computing/network_overview.md
+        children:
+          - file: content/computing/network_history.md
+          - file: content/computing/http_protocol.md
+          - file: content/computing/web_architecture.md
+          - file: content/computing/philosophy_and_web3.md
+
+  - title: "Part 03. 문자의 디지털 재현" 
+    children:
+      - file: content/encoding/ascii_history.md
+      - file: content/encoding/cjk_encoding.md
+      - file: content/encoding/unicode_utf8.md
+      - file: content/encoding/cjk_input_methods.md
+
+  # ==========================================
+  # [10번대: 데이터의 형태와 인문학적 모델링]
+  # ==========================================
+  - title: "Part 10. 데이터의 형태와 인문학적 모델링"
+    children:
+      - file: content/data_intro/data_and_machine_readability.md
+      - file: content/data_intro/flat_data_and_rdb.md
+      - file: content/data_intro/hierarchical_data_and_xml.md
+      - file: content/data_intro/graph_data_and_ai_labeling.md
+      - file: content/data_intro/public_data_and_practice.md
+
+  - title: "Part 11. 비정형 텍스트: 정규표현식"
+    children:
+      - file: content/regex/regex_environment.md
+      - file: content/regex/regex_syntax.md
+      - title: "정규표현식 실무와 다중 커서"
+        file: content/regex/regex_practice.md
+        children:
+          - file: content/regex/regex_practice_cleansing.md
+          - file: content/regex/regex_practice_structuring.md
+          - file: content/xml/vscode_regex_multicursor.md
+
+  - title: "Part 12. 전자문서와 하이퍼텍스트: XML과 TEI"
+    children:
+      - file: content/xml/xml_fundamentals.md
+      - file: content/xml/tei_guidelines.md
+      - file: content/xml/digital_archives_practice.md
+      
+      - title: "XML 편찬 워크플로우와 AI 협업"
+        file: content/xml/xml_compilation_paradigm_shift.md
+        children:
+          - file: content/xml/llm_markup_prompting.md
+          - file: content/xml/human_in_the_loop_validation.md
+          
+      - title: "DH 학계 표준 도구 (Oxygen & VS Code)"
+        file: content/xml/xml_tools_oxygen_author.md
+        children:
+          - file: content/xml/xml_tools_validation.md
+          - file: content/xml/xml_tools_xpath_xslt.md
+          - file: content/xml/vscode_xml_plugins.md
+          
+      - title: "한국 인문학 데이터 마크업 케이스 스터디 1"
+        file: content/xml/case_study_magazine.md
+        children:
+          - file: content/xml/case_study_nikh_philosophy.md
+          - file: content/xml/case_study_hierarchy_metadata.md
+          - file: content/xml/case_study_semantic_index.md
+          - file: content/xml/case_study_media_conversion.md
+          
+      - title: "한국 인문학 데이터 마크업 케이스 스터디 2"
+        file: content/xml/case_study_sillok.md
+        children:
+          - file: content/xml/case_study_sillok_hierarchy.md
+          - file: content/xml/case_study_sillok_time.md
+          - file: content/xml/case_study_sillok_entities.md
+          - file: content/xml/case_study_sillok_gaiji.md
+          
+      - file: content/xml/case_study_sejong_corpus.md
+
+  - title: "Part 13. 구조적 데이터: RDB와 SQL"
+    children:
+      - title: "플랫 데이터의 한계와 구글 스프레드시트 기반의 사전 정규화 경험"
+        file: content/rdb/intro_spreadsheet_to_rdb.md
+        children:
+          - title: "인문학자의 흔한 실수: 하나의 셀에 욱여넣은 다중 데이터의 치명적 한계"
+            file: content/rdb/spreadsheet_flat_data_limits.md
+          - title: "시트(Sheet) 분리와 VLOOKUP/INDEX-MATCH를 통한 관계형 연결의 '아하 모먼트'"
+            file: content/rdb/spreadsheet_relational_experience.md
+
+      - title: "RDB 개론과 다기종 실습 환경 구축"
+        file: content/rdb/rdb_fundamentals_and_environment.md
+        children:
+          - title: "RDB의 역사와 무서버(Serverless) 교육 환경: 웹 샌드박스와 SQLite의 활용"
+            file: content/rdb/env_serverless_sqlite.md
+          - title: "클라이언트-서버 데몬의 이해: XAMPP 로컬 스택 및 클라우드 프리 티어의 함정"
+            file: content/rdb/env_local_and_cloud.md
+          - title: "범용 데이터베이스 클라이언트: DBeaver와 HeidiSQL의 아키텍처 및 보안 세팅"
+            file: content/rdb/env_universal_clients.md
+
+      - title: "인문학 지식의 전산적 재구축과 ERD 모델링"
+        file: content/rdb/historical_data_modeling.md
+        children:
+          - title: "조선시대 인물·관직 데이터로 배우는 제1~제3 정규화(Normalization)"
+            file: content/rdb/modeling_normalization_1_to_3.md
+          - title: "역사적 모호성 해결 패턴: 정밀도 코드와 이벤트 중심 N:M 교차 테이블"
+            file: content/rdb/modeling_historical_ambiguity.md
+          - title: "시공간 변동성(Temporal) 모델링과 ERDCloud/Draw.io 기반 협업 시각화"
+            file: content/rdb/modeling_temporal_spatiotemporal.md
+          - title: "설계의 완성: ERD를 넘어선 테이블 기술 명세서(Data Dictionary) 작성 실무"
+            file: content/rdb/modeling_data_dictionary.md
+
+      - title: "플랫 파일 처리와 데이터 파이프라인 구축"
+        file: content/rdb/rdb_data_import_export.md
+        children:
+          - title: "CSV/TXT 데이터 임포트 실무와 인코딩(UTF-8 BOM) 트러블슈팅"
+            file: content/rdb/pipeline_csv_import_troubleshooting.md
+
+      - title: "SQL 기초와 이기종 방언(Dialects)의 이해"
+        file: content/rdb/sql_dialects_and_queries.md
+        children:
+          - title: "DDL과 DML의 구조 및 이기종 SQL 문법 비교 (MSSQL vs MySQL)"
+            file: content/rdb/sql_ddl_dml_comparison.md
+          - title: "PK 자동 증가 메커니즘과 문자열/페이징 처리의 철학적 차이"
+            file: content/rdb/sql_pk_and_pagination.md
+          - title: "SQL 실습을 위한 조선시대 인물·관직 통합 데이터셋 셋업"
+            file: content/rdb/sql_practice_dataset_setup.md  
+          - title: "한국학 데이터 추출 실습: 패턴 매칭(LIKE)과 문자열 함수 활용"
+            file: content/rdb/sql_historical_data_practice.md
+          - title: "관계망 복원 실습: 다중 테이블 JOIN 연산과 서브쿼리(Subquery)의 응용"
+            file: content/rdb/sql_join_and_subquery.md
+
+
+
+  - title: "Part 14. 지식 그래프와 시맨틱 웹 (RDF)"
+    file: content/rdf/part14_intro.md
+    children:
+    # =======================================================
+    # 모듈 1. 디지털 인문학과 시맨틱 웹의 철학적 기반
+    # =======================================================
+    - title: "1장. 텍스트에서 데이터로: 디지털 인문학과 지식의 진화"
+      file: content/rdf/ch01_evolution_intro.md
       children:
-        - file: content/data_intro/data_and_machine_readability.md
-        - file: content/data_intro/flat_data_and_rdb.md
-        - file: content/data_intro/hierarchical_data_and_xml.md
-        - file: content/data_intro/graph_data_and_ai_labeling.md
-        - file: content/data_intro/public_data_and_practice.md
+        - title: "1.1. 역사 데이터의 파편화와 사일로(Silo) 현상"
+          file: content/rdf/ch01_1_history_and_silo.md
+        - title: "1.2. 로우 데이터(Raw Data)의 개방과 공유의 가치"
+          file: content/rdf/ch01_2_rawdata_open.md
+        - title: "1.3. 관계형 데이터베이스(RDB)의 인문학적 한계"
+          file: content/rdf/ch01_3_rdb_limits.md
 
-    - title: "Part 5. 비정형 텍스트: 정규표현식"
+    - title: "2장. 시맨틱 웹과 LOD (Linked Open Data) 패러다임"
+      file: content/rdf/ch02_semantic_lod_intro.md
       children:
-        - file: content/regex/regex_environment.md
-        - file: content/regex/regex_syntax.md
-        - file: content/regex/regex_practice.md
-          children:
-            - file: content/regex/regex_practice_cleansing.md
-            - file: content/regex/regex_practice_structuring.md
+        - title: "2.1. Web 3.0과 시맨틱 웹의 철학적 지향점"
+          file: content/rdf/ch02_1_web3_philosophy.md
+        - title: "2.2. 링크드 오픈 데이터(LOD)의 4원칙과 생태계"
+          file: content/rdf/ch02_2_lod_principles.md
 
-    - title: "Part 5. 비정형 텍스트: 정규표현식"
+    - title: "3장. 지식 그래프 인프라: W3C 표준과 산업계 표준의 비교"
+      file: content/rdf/ch03_rdf_vs_neo4j_intro.md
       children:
-        - file: content/regex/regex_environment.md
-        - file: content/regex/regex_syntax.md
-        - file: content/regex/regex_practice.md
-          children:
-            - file: content/regex/regex_practice_cleansing.md
-            - file: content/regex/regex_practice_structuring.md
-            # [추가] VS Code 다중 커서 및 정규표현식 실무 (xml 폴더 내 파일이지만 내용상 이곳에 배치)
-            - file: content/xml/vscode_regex_multicursor.md
+        - title: "3.1. 웹 표준 기반의 개방형 지식망: W3C RDF"
+          file: content/rdf/ch03_1_w3c_rdf.md
+        - title: "3.2. 산업계 표준 속성 그래프(Property Graph): Neo4j"
+          file: content/rdf/ch03_2_industry_neo4j.md
+        - title: "3.3. 하이브리드 전략: Neosemantics (n10s) 플러그인"
+          file: content/rdf/ch03_3_neosemantics_hybrid.md
 
-    - title: "Part 6. 전자문서와 하이퍼텍스트: XML과 TEI"
+    - title: "4장. 관계의 원자 단위: RDF 트리플(Triple) 모델"
+      file: content/rdf/ch04_triple_intro.md
       children:
-        - file: content/xml/xml_fundamentals.md
-        - file: content/xml/tei_guidelines.md
-        - file: content/xml/digital_archives_practice.md
-        
-        # [추가] 1. XML 편찬 워크플로우와 AI 협업
-        - file: content/xml/xml_compilation_paradigm_shift.md
-          children:
-            - file: content/xml/llm_markup_prompting.md
-            - file: content/xml/human_in_the_loop_validation.md
-            
-        # [추가] 2. DH 학계 표준 도구 (Oxygen & VS Code)
-        - file: content/xml/xml_tools_oxygen_author.md
-          children:
-            - file: content/xml/xml_tools_validation.md
-            - file: content/xml/xml_tools_xpath_xslt.md
-        - file: content/xml/vscode_xml_plugins.md
-        
-        # [추가] 3. 한국 인문학 데이터 마크업 케이스 스터디
-        - file: content/xml/case_study_magazine.md
-          children:
-            - file: content/xml/case_study_nikh_philosophy.md
-            - file: content/xml/case_study_hierarchy_metadata.md
-            - file: content/xml/case_study_semantic_index.md
-            - file: content/xml/case_study_media_conversion.md
-            
-        - file: content/xml/case_study_sillok.md
-          children:
-            - file: content/xml/case_study_sillok_hierarchy.md
-            - file: content/xml/case_study_sillok_time.md
-            - file: content/xml/case_study_sillok_entities.md
-            - file: content/xml/case_study_sillok_gaiji.md
-            
-        - file: content/xml/case_study_sejong_corpus.md
+        - title: "4.1. 주어-서술어-목적어(S-P-O): 온톨로지의 기본 문법"
+          file: content/rdf/ch04_1_ontology_spo.md
+        - title: "4.2. 비의미적 식별자(Non-semantic ID)의 중요성"
+          file: content/rdf/ch04_2_non_semantic_id.md
+        - title: "4.3. 트리플의 직렬화(Serialization)와 포맷"
+          file: content/rdf/ch04_3_rdf_serialization.md
 
-    - title: "Part 7. 구조적 데이터: RDB와 SQL"
+    - title: "5장. 모든 사물의 고유한 이름: URI와 식별자 체계"
+      file: content/rdf/ch05_uri_pid_intro.md
       children:
-        # ---------------------------------------------------------
-        # 1. RDB 도입의 당위성: 스프레드시트에서 관계형 모델로
-        # ---------------------------------------------------------
-        - file: content/rdb/intro_spreadsheet_to_rdb.md
-          title: "플랫 데이터의 한계와 구글 스프레드시트 기반의 사전 정규화 경험"
-          children:
-            - file: content/rdb/spreadsheet_flat_data_limits.md
-              title: "인문학자의 흔한 실수: 하나의 셀에 욱여넣은 다중 데이터의 치명적 한계"
-            - file: content/rdb/spreadsheet_relational_experience.md
-              title: "시트(Sheet) 분리와 VLOOKUP/INDEX-MATCH를 통한 관계형 연결의 '아하 모먼트'"
+        - title: "5.1. 쿨 URI(Cool URIs don't change) 원칙"
+          file: content/rdf/ch05_1_cool_uris.md
+        - title: "5.2. 글로벌 식별자 체계 비교: DOI, ARK, PID"
+          file: content/rdf/ch05_2_pid_comparison.md
+        - title: "5.3. HTTP Range 14와 303 Redirect의 원리"
+          file: content/rdf/ch05_3_httprange14_303.md
+        - title: "5.4. 기계와 인간을 위한 내용 협상(Content Negotiation)"
+          file: content/rdf/ch05_4_content_negotiation.md
 
-        # ---------------------------------------------------------
-        # 2. 다기종 RDB 환경 구축과 클라이언트 세팅
-        # ---------------------------------------------------------
-        - file: content/rdb/rdb_fundamentals_and_environment.md
-          title: "RDB 개론과 다기종 실습 환경 구축"
-          children:
-            - file: content/rdb/env_serverless_sqlite.md
-              title: "RDB의 역사와 무서버(Serverless) 교육 환경: 웹 샌드박스와 SQLite의 활용"
-            - file: content/rdb/env_local_and_cloud.md
-              title: "클라이언트-서버 데몬의 이해: XAMPP 로컬 스택 및 클라우드 프리 티어의 함정"
-            - file: content/rdb/env_universal_clients.md
-              title: "범용 데이터베이스 클라이언트: DBeaver와 HeidiSQL의 아키텍처 및 보안 세팅"
-
-        # ---------------------------------------------------------
-        # 3. 데이터 모델링과 기술 문서(명세서) 작성
-        # ---------------------------------------------------------
-        - file: content/rdb/historical_data_modeling.md
-          title: "인문학 지식의 전산적 재구축과 ERD 모델링"
-          children:
-            - file: content/rdb/modeling_normalization_1_to_3.md
-              title: "조선시대 인물·관직 데이터로 배우는 제1~제3 정규화(Normalization)"
-            - file: content/rdb/modeling_historical_ambiguity.md
-              title: "역사적 모호성 해결 패턴: 정밀도 코드와 이벤트 중심 N:M 교차 테이블"
-            - file: content/rdb/modeling_temporal_spatiotemporal.md
-              title: "시공간 변동성(Temporal) 모델링과 ERDCloud/Draw.io 기반 협업 시각화"
-            - file: content/rdb/modeling_data_dictionary.md
-              title: "설계의 완성: ERD를 넘어선 테이블 기술 명세서(Data Dictionary) 작성 실무"
-
-        # ---------------------------------------------------------
-        # 4. 데이터 파이프라인: 임포트와 트러블슈팅
-        # ---------------------------------------------------------
-        - file: content/rdb/rdb_data_import_export.md
-          title: "플랫 파일 처리와 데이터 파이프라인 구축"
-          children:
-            - file: content/rdb/pipeline_csv_import_troubleshooting.md
-              title: "CSV/TXT 데이터 임포트 실무와 인코딩(UTF-8 BOM) 트러블슈팅"
-
-        # ---------------------------------------------------------
-        # 5. SQL 데이터 제어와 이기종 방언의 이해
-        # ---------------------------------------------------------
-        - file: content/rdb/sql_dialects_and_queries.md
-          title: "SQL 기초와 이기종 방언(Dialects)의 이해"
-          children:
-            - file: content/rdb/sql_ddl_dml_comparison.md
-              title: "DDL과 DML의 구조 및 이기종 SQL 문법 비교 (MSSQL vs MySQL)"
-            - file: content/rdb/sql_pk_and_pagination.md
-              title: "PK 자동 증가 메커니즘과 문자열/페이징 처리의 철학적 차이"
-            - file: content/rdb/sql_historical_data_practice.md
-              title: "한국학 데이터 추출 실습: 패턴 매칭(LIKE)과 문자열 함수 활용"
-            - file: content/rdb/sql_join_and_subquery.md
-              title: "관계망 복원 실습: 다중 테이블 JOIN 연산과 서브쿼리(Subquery)의 응용"
-
-        # ---------------------------------------------------------
-        # 6. 에필로그: 데이터의 개방과 API 서비스
-        # ---------------------------------------------------------
-        - file: content/rdb/data_as_a_service.md
-          title: "데이터의 서비스화(DaaS): 내 데이터베이스를 세상과 연결하기"
-          children:
-            - file: content/rdb/api_deployment_datasette.md
-              title: "경량 도구(Datasette/BaaS)를 활용한 코딩 없는 REST API 배포 실무"
-
-    - title: "Part 8. 의미와 연결: 시맨틱 웹과 RDF"
+    - title: "6장. 세상을 바라보는 두 가지 시선: OWA와 CWA"
+      file: content/rdf/ch06_owa_cwa_intro.md
       children:
-        - file: content/rdf/semantic_web.md
-        - file: content/rdf/ontology_design.md
-        - file: content/rdf/korean_studies_lod.md
+        - title: "6.1. 개방 세계 가정(Open World Assumption)의 철학"
+          file: content/rdf/ch06_1_owa_concept.md
+        - title: "6.2. 폐쇄 세계 가정(Closed World Assumption)과의 비교"
+          file: content/rdf/ch06_2_cwa_concept.md
 
-    - title: "Part 9. 기초 통계와 데이터 탐색"
+    # =======================================================
+    # 모듈 2. 시맨틱 데이터 질의와 융합 (SPARQL)
+    # =======================================================
+    - title: "7장. 지식 그래프에 질의하기 I: SPARQL 기초 문법"
+      file: content/rdf/ch07_sparql_basics_intro.md
       children:
-        - file: content/stats/descriptive_statistics.md
-        - file: content/stats/probability_distributions.md
-        - file: content/stats/eda_with_python.md
+        - title: "7.1. SPARQL의 기본 구조: SELECT, WHERE, FILTER"
+          file: content/rdf/ch07_1_basic_syntax.md
+        - title: "7.2. 심화 질의: OPTIONAL, UNION, MINUS 활용"
+          file: content/rdf/ch07_2_advanced_syntax.md
 
-    - title: "Part 10. 텍스트 마이닝과 자연어 처리"
+    - title: "8장. 지식 그래프에 질의하기 II: 페더레이션과 지식 융합"
+      file: content/rdf/ch08_federation_intro.md
       children:
-        - file: content/text_mining/text_mining_flow.md
-        - file: content/text_mining/morphological_analysis.md
-        - file: content/text_mining/topic_modeling.md
+        - title: "8.1. 원격 서버의 장벽을 넘는 SERVICE 질의어"
+          file: content/rdf/ch08_1_service_keyword.md
+        - title: "8.2. Wikidata와의 실시간 융합 질의 (owl:sameAs 활용)"
+          file: content/rdf/ch08_2_wikidata_sameas.md
+        - title: "8.3. 쿼리 성능 최적화와 트러블슈팅"
+          file: content/rdf/ch08_3_query_optimization.md
+        - title: "8.4. 우연한 발견(Serendipitous Discovery)의 가치"
+          file: content/rdf/ch08_4_serendipitous_discovery.md
 
-    - title: "Part 11. 지식 네트워크와 관계망 분석 (SNA)"
+    # =======================================================
+    # 모듈 3. 글로벌 메타데이터 표준과 온톨로지 어휘집
+    # =======================================================
+    - title: "9장. 온톨로지 철학과 상호운용성(Interoperability)"
+      file: content/rdf/ch09_ontology_philosophy_intro.md
       children:
-        - file: content/network/network_theory_basics.md
-        - file: content/network/centrality_and_community.md
-        - file: content/network/sna_practice.md
+        - title: "9.1. 데이터 고아(Data Orphan)의 비극과 표준화"
+          file: content/rdf/ch09_1_data_orphan_tragedy.md
+        - title: "9.2. FAIR 원칙: 찾아갈 수 있고 융합할 수 있는 데이터"
+          file: content/rdf/ch09_2_fair_principles.md
+        - title: "9.3. 존재론적 약속(Ontological Commitment)의 의미"
+          file: content/rdf/ch09_3_ontological_commitment.md
+        - title: "9.4. 링구아 프랑카(Lingua Franca): 크로스워크와 매핑"
+          file: content/rdf/ch09_4_lingua_franca_crosswalk.md
 
-    - title: "Part 12. 공간 인문학과 GIS"
+    - title: "10장. 서지 메타데이터의 표준: Dublin Core (DC)"
+      file: content/rdf/ch10_dublin_core_intro.md
       children:
-        - file: content/spatial/gis_fundamentals.md
-        - file: content/spatial/spatial_data_mapping.md
-        - file: content/spatial/historical_gis_cases.md
+        - title: "10.1. 단순 더블린 코어(Simple DC) 15요소의 이해"
+          file: content/rdf/ch10_1_simple_dc_elements.md
+        - title: "10.2. 한계 극복: 한정어(Qualified DC)와 DCTERMS"
+          file: content/rdf/ch10_2_qualified_dc_dcterms.md
+        - title: "10.3. DCMI 타입 어휘집과 어플리케이션 프로파일(DCAP)"
+          file: content/rdf/ch10_3_dcmi_type_dcap.md
+        - title: "10.4. 동양 고문헌 서지 데이터의 크로스워크 매핑 사례"
+          file: content/rdf/ch10_4_asian_bibliography_crosswalk.md
 
-    - title: "Part 13. 정보 시각화의 원리"
+    - title: "11장. 복합 문화유산 객체 모델링: EDM (Europeana Data Model)"
+      file: content/rdf/ch11_edm_intro.md
       children:
-        - file: content/visualization/efficient_info_vis.md
-        - file: content/visualization/python_dataviz_tools.md
-        - file: content/visualization/network_and_spatial_vis.md
+        - title: "11.1. 문화유산 원본 실체: edm:ProvidedCHO"
+          file: content/rdf/ch11_1_edm_providedcho.md
+        - title: "11.2. 디지털 자원과 뷰(View): edm:WebResource"
+          file: content/rdf/ch11_2_edm_webresource.md
+        - title: "11.3. 정보의 묶음과 출처: ORE Aggregation"
+          file: content/rdf/ch11_3_ore_aggregation.md
+        - title: "11.4. 계층적 사물(기록물철-건)의 모델링 방식"
+          file: content/rdf/ch11_4_hierarchical_objects.md
+        - title: "11.5. 맥락적 개체(Contextual Entities): 인물, 장소, 시간"
+          file: content/rdf/ch11_5_contextual_entities.md
 
-    - title: "Part 14. 다차원 매체의 활용"
+    - title: "12장. 통제 어휘집과 시소러스 구축: SKOS"
+      file: content/rdf/ch12_skos_intro.md
       children:
-        - file: content/multimedia/3d_modeling_archives.md
-        - file: content/multimedia/drone_photogrammetry.md
+        - title: "12.1. 개념과 개념 체계: Concept & ConceptScheme"
+          file: content/rdf/ch12_1_concept_scheme.md
+        - title: "12.2. 다국어 레이블과 동의어 처리: Lexical Labels"
+          file: content/rdf/ch12_2_lexical_labels.md
+        - title: "12.3. 개념 간의 의미망: Semantic Relations (Broader/Narrower)"
+          file: content/rdf/ch12_3_semantic_relations.md
+        - title: "12.4. 외부 어휘집과의 융합: Vocabulary Mapping"
+          file: content/rdf/ch12_4_vocabulary_mapping.md
 
-    - title: "Part 15. 인공지능 패러다임과 딥러닝"
+    - title: "13장. 인물 관계망과 생애사 모델링: FOAF & BIO"
+      file: content/rdf/ch13_foaf_bio_intro.md
       children:
-        - file: content/ai_basics/ai_paradigm.md
-        - file: content/ai_basics/deep_learning_architecture.md
+        - title: "13.1. 사람과 그룹을 잇는 FOAF 핵심 클래스"
+          file: content/rdf/ch13_1_foaf_core_classes.md
+        - title: "13.2. 이메일과 홈페이지: 역함수 속성(Inverse Functional)의 식별력"
+          file: content/rdf/ch13_2_inverse_functional_properties.md
+        - title: "13.3. 탄생과 죽음, 그리고 역할: BIO 온톨로지 확장"
+          file: content/rdf/ch13_3_bio_ontology_extension.md
+        - title: "13.4. 조선시대 인물 관계망(혈연, 학맥) 적용 사례"
+          file: content/rdf/ch13_4_historical_networks.md
+        - title: "13.5. 중국 역대 인물 데이터베이스(CBDB) 모델링 참조"
+          file: content/rdf/ch13_5_cbdb_reference.md
 
-    - title: "Part 16. 생성형 AI와 거대언어모델 (LLM)"
+    - title: "14장. 사건 중심 역사 모델링의 정수: CIDOC CRM"
+      file: content/rdf/ch14_cidoccrm_intro.md
       children:
-        - file: content/llm/gen_ai_mechanisms.md
-        - file: content/llm/open_source_llm.md
+        - title: "14.1. 존재(Entity)에서 사건(Event)으로: 인식론적 대전환"
+          file: content/rdf/ch14_1_event_centric_epistemology.md
+        - title: "14.2. 사건(Event)과 행위(Activity)의 구분 및 연결"
+          file: content/rdf/ch14_2_event_and_activity.md
+        - title: "14.3. 시공간의 불확실성(Spatiotemporal Uncertainty) 처리"
+          file: content/rdf/ch14_3_spatiotemporal_uncertainty.md
+        - title: "14.4. 물리적 사물과 개념적 사물 (FRBRoo 융합)"
+          file: content/rdf/ch14_4_physical_vs_conceptual_frbroo.md
+        - title: "14.5. 명칭(Appellation)의 생애주기 모델링"
+          file: content/rdf/ch14_5_appellation_lifecycle.md
 
-    - title: "Part 17. 인문학도를 위한 프롬프트 엔지니어링"
+    - title: "15장. 디지털 사료의 출처와 이력 추적: PROV-O"
+      file: content/rdf/ch15_provo_intro.md
       children:
-        - file: content/prompting/prompt_design_principles.md
-        - file: content/prompting/few_shot_and_cot.md
+        - title: "15.1. 출처 추적의 3대 요소: 개체, 행위, 에이전트 (Core Triad)"
+          file: content/rdf/ch15_1_prov_core_triad.md
+        - title: "15.2. 고문헌 디지털화(Digitization) 생애주기 이력 관리"
+          file: content/rdf/ch15_2_digitization_lifecycle.md
+        - title: "15.3. 상충하는 역사적 주장(이설)과 출처 기반의 신뢰성 검증"
+          file: content/rdf/ch15_3_conflicting_claims_handling.md
 
-    - title: "Part 18. 인공지능 실전 응용"
+    # =======================================================
+    # 모듈 4. 지식 그래프 설계와 구축 실무 (Protégé)
+    # =======================================================
+    - title: "16장. 하향식(Top-down) 설계의 진입: Protégé 기초"
+      file: content/rdf/ch16_protege_basics.md
       children:
-        - file: content/ai_application/ai_for_literature_and_emotion.md
-        - file: content/ai_application/distant_reading_techniques.md
-        - file: content/ai_application/graph_rag.md
+        - title: "16.1. 프로젝트 셋업: 절대 주소(IRI)와 네임스페이스 선언"
+          file: content/rdf/ch16_1_setup_iri.md
+        - title: "16.2. Protégé UI의 해부학: Entities 탭의 3대 요소"
+          file: content/rdf/ch16_2_ui_anatomy.md
 
-    - title: "Part 19. 지속 가능한 연구 인프라"
+    - title: "17장. 존재론적 계층도(Class)의 정밀 구축"
+      file: content/rdf/ch17_class_hierarchy.md
       children:
-        - file: content/infra/cli_linux.md
-        - file: content/infra/git_github.md
-        - file: content/infra/myst_syntax_guide.md
-        - file: content/infra/publish_environment.md
+        - title: "17.1. 조선시대 신분제와 관직의 분류학: Class 계층도(Hierarchy) 생성"
+          file: content/rdf/ch17_1_class_taxonomy.md
+        - title: "17.2. 상호 배타성(Disjointness)과 다중 상속"
+          file: content/rdf/ch17_2_disjointness.md
+        - title: "17.3. 동치 클래스(Equivalent Class): 글로벌 표준과의 시각적 맵핑"
+          file: content/rdf/ch17_3_equivalent_class.md
 
-    - title: "Part 90. 지속 가능한 연구 인프라"
+    - title: "18장. 관계의 문법과 수학적 성질 (Properties)"
+      file: content/rdf/ch18_properties_logic.md
+      children:
+        - title: "18.1. 주어와 목적어의 자격 제한: Domain과 Range 설정"
+          file: content/rdf/ch18_1_domain_range.md
+        - title: "18.2. 역함수(Inverse)와 이행성(Transitive): 학맥과 관계의 맵핑"
+          file: content/rdf/ch18_2_inverse_transitive.md
+        - title: "18.3. 속성의 수학적 성질: Functional, Symmetric 적용"
+          file: content/rdf/ch18_3_property_characteristics.md
+        - title: "18.4. 데이터 속성(Data Property)과 타입(Datatype): 문자열의 통제"
+          file: content/rdf/ch18_4_data_properties.md
+        - title: "18.5. 데이터 타입의 해부학: XSD 표준과 인문학적 시공간 제어"
+          file: content/rdf/ch18_5_xsd_datatypes.md
 
+    - title: "19장. 개체 할당과 심화 논리 제약 (Individuals & Restrictions)"
+      file: content/rdf/ch19_individuals_restrictions.md 
+      children:
+        - title: "19.1. 무대 위로 배우 호출하기: 인스턴스(Instance) 생성과 할당"
+          file: content/rdf/ch19_1_instance_assertion.md
+        - title: "19.2. 동명이인의 논리학: sameAs와 differentFrom"
+          file: content/rdf/ch19_2_same_different.md
+        - title: "19.3. 조건부 헌법의 제정: Some과 Only를 활용한 심화 논리 제약"
+          file: content/rdf/ch19_3_some_only_restrictions.md
+        - title: "19.4. 수량의 통제: 기수 제약(Cardinality)과 역사적 정합성"
+          file: content/rdf/ch19_4_cardinality.md
+
+    - title: "20장. 추론, 시각화, 그리고 대량 데이터 임포트 파이프라인"
+      file: content/rdf/ch20_reasoning_export.md
+      children:
+        - title: "20.1. 기계의 논리적 검열관: HermiT 추론기를 활용한 모순 탐지"
+          file: content/rdf/ch20_1_hermit_reasoner.md
+        - title: "20.2. 온톨로지 시각화 플러그인: OntoGraf와 VOWL 렌더링"
+          file: content/rdf/ch20_2_ontograf_vowl.md
+        - title: "20.3. 엑셀 사일로의 탈출: Cellfie 플러그인을 활용한 자동 변환(Import)"
+          file: content/rdf/ch20_3_cellfie_import.md
+        - title: "20.4. 설계도의 추출과 배포: Turtle(TTL) 포맷 변환과 서버 이관 준비"
+          file: content/rdf/ch20_4_export_turtle.md
+
+    # =======================================================
+    # 모듈 5. 지식 그래프 인프라 구축
+    # =======================================================
+    - title: "21장. W3C 표준 트리플 스토어 구축: Apache Jena와 Virtuoso"
+      file: content/rdf/ch21_triplestore_intro.md
+      children:
+        - title: "21.1. 트리플 스토어의 개념과 서버(Linux) 환경 기반 설정"
+          file: content/rdf/ch21_1_server_setup.md
+        - title: "21.2. Apache Jena Fuseki 구축과 운용: 로컬 엔드포인트 세팅"
+          file: content/rdf/ch21_2_jena_fuseki.md
+        - title: "21.3. OpenLink Virtuoso 구축과 운용: Conductor UI 관리"
+          file: content/rdf/ch21_3_virtuoso_conductor.md
+
+    - title: "22장. 산업계 표준 속성 그래프 구축과 융합: Neo4j"
+      file: content/rdf/ch22_neo4j_infra_intro.md
+      children:
+        - title: "22.1. Neo4j 데이터베이스 인프라 구축 및 Cypher 질의어 기초"
+          file: content/rdf/ch22_1_neo4j_setup.md
+        - title: "22.2. 대규모 네트워크 탐색(Traversal)과 GDS 알고리즘"
+          file: content/rdf/ch22_2_gds_algorithms.md
+        - title: "22.3. Neosemantics(n10s) 플러그인 실무: RDF 연동"
+          file: content/rdf/ch22_3_neosemantics.md
+
+    - title: "23장. 협업형 인프라의 최고봉: Wikibase 로컬 구축 및 워크플로우"
+      file: content/rdf/ch23_wikibase_intro.md
+      children:
+        - title: "23.1. 상향식에서 하향식(Wikibase)으로의 인식론적 대전환"
+          file: content/rdf/ch23_1_bottom_up_epistemology.md
+        - title: "23.2. Docker 기반 배포 및 Nginx 역방향 프록시"
+          file: content/rdf/ch23_2_docker_nginx_https.md
+        - title: "23.3. 백엔드 동기화 파이프라인: 미디어위키 JSON 연동"
+          file: content/rdf/ch23_3_munging_pipeline.md
+        - title: "23.4. 연구 랩(Lab) 협업 워크플로우: Cradle, Bot 생태계"
+          file: content/rdf/ch23_4_lab_workflow.md
+
+    # =======================================================
+    # 모듈 6. 대규모 데이터 파이프라인
+    # =======================================================
+    - title: "24장. 정형 데이터(CSV/RDB)의 3대 ETL 파이프라인 실무"
+      file: content/rdf/ch24_etl_intro.md
+      children:
+        - title: "24.1. OpenRefine + RDF Transform: 노이즈 클렌징"
+          file: content/rdf/ch24_1_openrefine_rdf.md
+        - title: "24.2. Tarql: SPARQL 1.1 문법을 응용한 거대 CSV 파일 변환"
+          file: content/rdf/ch24_2_tarql_streaming.md
+        - title: "24.3. R2RML: 대규모 RDB 가상 지식 그래프(VKG) 구축"
+          file: content/rdf/ch24_3_r2rml_vkg.md
+
+    - title: "25장. 비정형 역사 원문 텍스트의 딥러닝 기반 자동 추출 (NLP)"
+      file: content/rdf/ch25_nlp_extraction_intro.md
+      children:
+        - title: "25.1. 파이프라인 아키텍처: 고문헌 OCR ➔ NER ➔ RE"
+          file: content/rdf/ch25_1_nlp_pipeline.md
+        - title: "25.2. 지식 그래프 임베딩(KGE)과 BERTMap 활용"
+          file: content/rdf/ch25_2_kge_bertmap.md
+        - title: "25.3. LLM 프롬프팅 최적화: 온톨로지 하위 집합 주입 기법"
+          file: content/rdf/ch25_3_llm_subset_prompting.md
+        - title: "25.4. 한계와 철학: Human-in-the-Loop(HITL) 체계"
+          file: content/rdf/ch25_4_hitl_philosophy.md
+
+    # =======================================================
+    # 모듈 7. 고급 시맨틱 기술과 검증
+    # =======================================================
+    - title: "26장. RDF-star (RDF*)를 활용한 사료의 이설(異說) 처리"
+      file: content/rdf/ch26_rdfstar_intro.md
+      children:
+        - title: "26.1. 기존 구체화(Reification)의 저주와 한계 돌파"
+          file: content/rdf/ch26_1_reification_limits.md
+        - title: "26.2. 중첩 트리플(<< s p o >>)을 이용한 모델링"
+          file: content/rdf/ch26_2_nested_triples.md
+        - title: "26.3. '단언(Asserted)'과 '인용(Quoted)'의 분리"
+          file: content/rdf/ch26_3_asserted_vs_quoted.md
+
+    - title: "27장. SHACL을 활용한 온톨로지 무결성 기계 검증"
+      file: content/rdf/ch27_shacl_intro.md
+      children:
+        - title: "27.1. 형태 그래프(Shapes Graph)를 통한 거버넌스 통제"
+          file: content/rdf/ch27_1_shapes_graph.md
+        - title: "27.2. RDB 제약조건의 시맨틱 매핑"
+          file: content/rdf/ch27_2_rdb_constraint_mapping.md
+        - title: "27.3. 속성 쌍 교차 검증: 연대기 오류의 기계적 차단"
+          file: content/rdf/ch27_3_property_pair_validation.md
+
+    - title: "28장. GeoSPARQL 기반 고차원 공간 추론 질의 실무"
+      file: content/rdf/ch28_geosparql_query_intro.md
+      children:
+        - title: "28.1. OGC 표준 함수(geof:)와 내부 연산자의 매핑"
+          file: content/rdf/ch28_1_ogc_vs_bif.md
+        - title: "28.2. 공간 추론 실전 1: 반경 내 객체 탐색"
+          file: content/rdf/ch28_2_proximity_search.md
+        - title: "28.3. 공간 추론 실전 2: 다각형 교차 판별 (Polygon Overlay)"
+          file: content/rdf/ch28_3_polygon_intersects.md
+
+    # =======================================================
+    # 모듈 8. 애플리케이션 및 인공지능(LLM) 융합
+    # =======================================================
+    - title: "29장. 검색엔진 최적화(SEO)와 JSON-LD 임베딩 파이프라인"
+      file: content/rdf/ch29_seo_jsonld_intro.md
+      children:
+        - title: "29.1. 구글을 위한 데이터 아일랜드: JSON-LD 아키텍처"
+          file: content/rdf/ch29_1_jsonld_vs_microdata.md
+        - title: "29.2. 인문학 사료의 Schema.org 매핑 전략"
+          file: content/rdf/ch29_2_schemaorg_mapping.md
+        - title: "29.3. 프론트엔드 SSR 렌더링 파이프라인"
+          file: content/rdf/ch29_3_ssr_xss_defense.md
+
+    - title: "30장. SPARQL 장벽을 허무는 경량 시각화 UI 아키텍처"
+      file: content/rdf/ch30_visualization_ui_intro.md
+      children:
+        - title: "30.1. 점진적 브라우징: LodLive와 방사형 탐색"
+          file: content/rdf/ch30_1_lodlive_browsing.md
+        - title: "30.2. 온톨로지 스키마 조망: WebVOWL 다이어그램"
+          file: content/rdf/ch30_2_webvowl_schema.md
+        - title: "30.3. 다중 홉 논리 탐색: RelFinder를 이용한 관계망 발견"
+          file: content/rdf/ch30_3_relfinder_paths.md
+        - title: "30.4. 안전한 퍼블리싱: SPARQL 프록시 미들웨어"
+          file: content/rdf/ch30_4_proxy_middleware.md
+
+    - title: "31장. LLM의 한계와 Graph RAG의 부상"
+      file: content/rdf/ch31_graph_rag_intro.md
+      children:
+        - title: "31.1. 벡터(Vector) RAG의 파편화 문제와 추론의 붕괴"
+          file: content/rdf/ch31_1_vector_rag_limits.md
+        - title: "31.2. NLQ(자연어 질의) to SPARQL 변환과 스키마 주입"
+          file: content/rdf/ch31_2_nlq_to_sparql.md
+
+    - title: "32장. 트리플 자연어 변환(Verbalization)과 한국어 처리"
+      file: content/rdf/ch32_verbalization_intro.md
+      children:
+        - title: "32.1. 기계의 트리플을 인간의 서사로: 템플릿과 생성형 변환"
+          file: content/rdf/ch32_1_template_generative.md
+        - title: "32.2. 교착어 난제 극복: 종성 연산을 통한 조사 결합 엔진"
+          file: content/rdf/ch32_2_korean_unicode_morphology.md
+
+    - title: "33장. 환각 억제 프롬프팅과 구조적 설명 가능성"
+      file: content/rdf/ch33_prompting_intro.md
+      children:
+        - title: "33.1. 검증 연쇄(CoVe)와 역사적 팩트 강제(Grounding)"
+          file: content/rdf/ch33_1_cove_grounding.md
+        - title: "33.2. 완벽한 추적성: 답변 도출 근거의 시각화"
+          file: content/rdf/ch33_2_structured_explainability.md
+
+    # =======================================================
+    # 모듈 9. 실전 종합 사례
+    # =======================================================
+    - title: "34장. 글로벌 선도 프로젝트 해부"
+      file: content/rdf/ch34_global_cases_intro.md
+      children:
+        - title: "34.1. CBDB (중국 역대 인물 데이터베이스): 지수년과 LOD 진화"
+          file: content/rdf/ch34_1_cbdb_index_year.md
+        - title: "34.2. Pelagios Network: 공간 인문학 철학과 어노테이션"
+          file: content/rdf/ch34_2_pelagios_recogito.md
+        - title: "34.3. SNAC: 기록학 인물 관계망과 '확률적 매칭' 알고리즘"
+          file: content/rdf/ch34_3_snac_probabilistic_matching.md
+
+
+  # ==========================================
+  # [20번대: 데이터 분석 및 탐색]
+  # ==========================================
+  - title: "Part 20. 데이터 연산을 위한 파이썬 기초" # [신규 추가]
+    children:
+      - title: "파이썬 분석 환경 구축과 문법 기초"
+        file: content/python_basics/intro_to_python_for_dh.md
+        children:
+          - file: content/python_basics/colab_environment_setup.md
+          - file: content/python_basics/variables_and_data_structures.md
+          - file: content/python_basics/control_flows_and_functions.md
+          - file: content/python_basics/pandas_data_manipulation.md
+
+  - title: "Part 21. 기초 통계와 데이터 탐색"
+    children:
+      - file: content/stats/descriptive_statistics.md
+      - file: content/stats/probability_distributions.md
+      - file: content/stats/eda_with_python.md
+
+  - title: "Part 22. 텍스트 마이닝과 자연어 처리"
+    children:
+      - file: content/text_mining/text_mining_flow.md
+      - file: content/text_mining/morphological_analysis.md
+      - file: content/text_mining/topic_modeling.md
+
+  - title: "Part 23. 지식 네트워크와 관계망 분석 (SNA)"
+    children:
+      - file: content/network/network_theory_basics.md
+      - file: content/network/centrality_and_community.md
+      - file: content/network/sna_practice.md
+
+  - title: "Part 24. 공간 인문학과 GIS"
+    children:
+      - file: content/spatial/gis_fundamentals.md
+      - file: content/spatial/spatial_data_mapping.md
+      - file: content/spatial/historical_gis_cases.md
+
+  # ==========================================
+  # [30번대: 시각화 및 다차원 매체]
+  # ==========================================
+  - title: "Part 30. 정보 시각화의 원리"
+    children:
+      - file: content/visualization/efficient_info_vis.md
+      - file: content/visualization/python_dataviz_tools.md
+      - file: content/visualization/network_and_spatial_vis.md
+
+  - title: "Part 31. 다차원 매체의 활용"
+    children:
+      - file: content/multimedia/3d_modeling_archives.md
+      - file: content/multimedia/drone_photogrammetry.md
+
+  # ==========================================
+  # [40번대: 인공지능 패러다임]
+  # ==========================================
+  - title: "Part 40. 인공지능 패러다임과 딥러닝"
+    children:
+      - file: content/ai_basics/ai_paradigm.md
+      - file: content/ai_basics/deep_learning_architecture.md
+
+  - title: "Part 41. 생성형 AI와 거대언어모델 (LLM)"
+    children:
+      - file: content/llm/gen_ai_mechanisms.md
+      - file: content/llm/open_source_llm.md
+
+  - title: "Part 42. 인문학도를 위한 프롬프트 엔지니어링"
+    children:
+      - file: content/prompting/prompt_design_principles.md
+      - file: content/prompting/few_shot_and_cot.md
+
+  - title: "Part 43. 인공지능 실전 응용"
+    children:
+      - file: content/ai_application/ai_for_literature_and_emotion.md
+      - file: content/ai_application/distant_reading_techniques.md
+      - file: content/ai_application/graph_rag.md
+
+  # ==========================================
+  # [70번대: 데이터 수집 (신규)]
+  # ==========================================
+  - title: "Part 70. 인문 데이터의 수집 전략"
+    children:
+      - title: "공공데이터와 웹 크롤링 실무"
+        file: content/data_collection/intro_data_collection.md
+        children:
+          - file: content/data_collection/public_data_act_and_portals.md
+          - file: content/data_collection/web_scraping_beautifulsoup.md
+          - file: content/data_collection/openapi_integration_practice.md
+
+  # ==========================================
+  # [80번대: 학술 커뮤니케이션]
+  # ==========================================
+  - title: "Part 80. 학술 커뮤니케이션과 출판"
+    children:
+      - file: content/communication/academic_writing.md
+      - file: content/communication/markdown_and_latex.md
+      - file: content/communication/open_access_and_preprints.md
+
+  # ==========================================
+  # [90번대: 도구 및 인프라]
+  # ==========================================
+  - title: "Part 90. 지속 가능한 연구 인프라"
+    children:
+      - file: content/infra/cli_linux.md
+      - file: content/infra/git_github.md
+      - file: content/infra/myst_syntax_guide.md
+      - file: content/infra/publish_environment.md
 
 # ==========================================
 # [사이트 디자인 및 추가 기능 설정]

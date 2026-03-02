@@ -36,8 +36,8 @@ jobs:
           node-version: "20"
 
       # Typst 엔진 설치 (PDF 변환용)
-      - name: Set up Typst
-        uses: typst-community/setup-typst@v3
+#      - name: Set up Typst
+#        uses: typst-community/setup-typst@v3
 
       # [필수] 한글 깨짐 방지를 위한 폰트 설치 (Noto CJK)
       - name: Install system dependencies (fonts, fontconfig)
