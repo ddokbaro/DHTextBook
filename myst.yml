@@ -706,6 +706,40 @@ project:
         - file: content/ai_application/distant_reading_techniques.md
         - file: content/ai_application/graph_rag.md
 
+
+  # ==========================================
+    # [60번대: 디지털 인문학 교육과 생태계]
+    # ==========================================
+    - title: "Part 60. 디지털 인문학 교육과 생태계"
+      file: content/education/part60_intro.md
+      children:
+        - title: "60.1. 한중연(AKS) 인문정보학 안내"
+          file: content/education/ch60_1_aks_dh_intro.md
+          children:
+            - title: "60.1.1. 교육 철학과 5단계 파이프라인"
+              file: content/education/ch60_1_1_philosophy_and_pipeline.md
+            
+            - title: "60.1.2. 정규 교과 과정"
+              file: content/education/ch60_1_2_regular_curriculum.md
+            
+            - title: "60.1.3. 맞춤형 교육과 개별주제연구"
+              file: content/education/ch60_1_3_custom_curriculum.md
+              
+            - title: "60.1.4. 연구교육연계과제 실무"
+              file: content/education/ch60_1_4_student_led_projects.md
+
+            - title: "60.1.5. 종합시험 및 학위·장학금 요건"
+              file: content/education/ch60_1_5_degree_and_scholarship.md
+
+            - title: "60.1.6. 교수진 교안 및 위키독스"
+              file: content/education/ch60_1_6_open_lectures_and_wikidocs.md
+
+            - title: "60.1.7. 졸업생 학위논문 참조 전략"
+              file: content/education/ch60_1_7_alumni_theses_reference.md
+
+            - title: "60.1.8. 연구실 인프라 및 멘토링"
+              file: content/education/ch60_1_8_lab_infra_and_mentoring.md
+
     # ==========================================
     # [70번대: 데이터 수집 (신규)]
     # ==========================================

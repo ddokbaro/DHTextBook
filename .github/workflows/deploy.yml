@@ -36,8 +36,8 @@ jobs:
           node-version: "20"
 
       # Typst 엔진 설치 (PDF 변환용)
-#      - name: Set up Typst
-#        uses: typst-community/setup-typst@v3
+      - name: Set up Typst
+        uses: typst-community/setup-typst@v3
 
       # [필수] 한글 깨짐 방지를 위한 폰트 설치 (Noto CJK)
       - name: Install system dependencies (fonts, fontconfig)
@@ -63,9 +63,9 @@ jobs:
           pip install jupyter-book jupytext
 
       # 1. PDF만 먼저 굽기
-#      - name: Build PDF exports
-#        run: |
-#          npx mystmd build --pdf
+      - name: Build PDF exports
+        run: |
+          npx mystmd build --pdf
 
       # 2. HTML(웹사이트) 굽기
       - name: Build the book
@@ -74,10 +74,10 @@ jobs:
           npx mystmd build --html
 
       # 3. [가장 핵심!!!] 만들어진 PDF를 웹사이트 배포 폴더(_build/html/exports)로 이사시키기
-#      - name: Check PDF build output
-#        run: |
-#          echo "Listing files in exports directory:"
-#          ls -R exports
+      - name: Check PDF build output
+        run: |
+          echo "Listing files in exports directory:"
+          ls -R exports
 
       - name: Copy exports into HTML build
         run: |
